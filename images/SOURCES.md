@@ -13,3 +13,5 @@ Tệp ảnh đã tải cục bộ. Không dùng ảnh để nhận là cửa hà
 - `s-chicken-interior.png`: hình ảnh không gian nội thất quán.
 
 Hai ảnh được tạo bằng AI theo yêu cầu người dùng, tham chiếu logo SVG của dự án; là hình minh họa ý tưởng, không phải ảnh chụp cửa hàng có thật.
+
+- `s-chicken-kitchen.png`: ảnh ý tưởng căn bếp S Chicken, tạo bằng AI ngày 25/10/2026, đồng bộ nhận diện với ảnh nội thất. Không phải ảnh chụp căn bếp hoặc nhân viên có thật.
