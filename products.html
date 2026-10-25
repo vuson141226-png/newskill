@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="S Chicken, Giòn ngon từng miếng, vui trọn từng phút! Website bài tập HTML, CSS và JavaScript.">
+  <meta name="theme-color" content="#c62828">
+  <title>Thực đơn | S Chicken</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="products-page">
+<a class="skip-link" href="#main">Chuyển đến nội dung</a>
+<div class="topbar">Giòn ngon mỗi ngày, vui cùng S Chicken! <span>10:00 đến 22:00 mỗi ngày</span>
+</div>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html"><img src="images/logo.svg" width="216" height="58" alt="S Chicken, Trang chủ">
+</a>
+<button class="menu-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="main-nav"><svg class="icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+</button>
+<nav id="main-nav" aria-label="Điều hướng chính">
+<a href="index.html">Trang chủ</a>
+<a href="about.html">Giới thiệu</a>
+<a href="products.html" class="active" aria-current="page">Thực đơn</a>
+<a href="blog.html">Tin tức</a>
+<a href="contact.html">Liên hệ</a><details class="nav-more"><summary>Khám phá <span>⌄</span></summary>
+<div>
+<a href="faq.html">Câu hỏi thường gặp</a>
+<a href="careers.html">Tuyển dụng</a>
+<a href="login.html">Đăng nhập / Đăng ký</a>
+<a href="product-detail.html?id=1">Món ăn nổi bật</a>
+<a href="cart.html">Giỏ hàng</a>
+</div></details>
+</nav>
+<div class="header-actions">
+<a class="account-link" href="login.html" aria-label="Tài khoản"><svg viewbox="0 0 24 24" class="icon" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 22v-3a8 8 0 0 1 16 0v3"></path></svg>
+</a>
+<a class="cart-link" href="cart.html" aria-label="Giỏ hàng"><svg viewbox="0 0 24 24" class="icon" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l2 14H4L6 7Z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg><span class="cart-count">0</span>
+</a>
+<a class="button small" href="products.html">Đặt món ngay</a>
+</div>
+</div>
+</header>
+<main id="main">
+<section class="page-intro" aria-label="Giới thiệu trang">
+<div class="container">
+<h1>Thực đơn đúng gu.</h1>
+<p>Từ gà giòn quen thuộc đến combo đầy đặn. Chọn món bạn thích, vui theo cách của bạn!</p>
+</div>
+</section>
+<section class="section container">
+<div class="filter-bar" role="group" aria-label="Lọc danh mục">
+<button class="filter-button active" data-category="Tất cả" aria-pressed="true">Tất cả</button>
+<button class="filter-button" data-category="Gà rán" aria-pressed="false">Gà rán</button>
+<button class="filter-button" data-category="Gà sốt" aria-pressed="false">Gà sốt</button>
+<button class="filter-button" data-category="Burger &amp; món kèm" aria-pressed="false">Burger &amp; món kèm</button>
+<button class="filter-button" data-category="Combo" aria-pressed="false">Combo</button>
+<button class="filter-button" data-category="Đồ uống" aria-pressed="false">Đồ uống</button>
+</div>
+<div class="menu-toolbar">
+<p id="result-count">15 món ngon đang chờ bạn</p>
+<label class="search-label">Tìm món <input id="product-search" type="search" placeholder="Tên món bạn thích…">
+</label>
+</div>
+<div class="product-grid" id="product-list">
+<div class="product-wrapper" data-category="Gà rán" data-name="Gà giòn nguyên bản">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=1"><img src="images/food-menu-3.png" alt="Gà giòn nguyên bản, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=1">Gà giòn nguyên bản</a>
+</h2>
+<span class="product-category">Gà rán</span>
+<p>Lớp vỏ giòn rụm, thịt gà mềm ngọt, đậm vị S Chicken.</p>
+<div class="product-bottom">
+<strong>39.000 ₫</strong>
+<button class="add-button" data-add="1" aria-label="Thêm Gà giòn nguyên bản vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=1">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Gà sốt" data-name="Gà sốt cay Hàn Quốc">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=2"><img src="images/food-menu-3.png" alt="Gà sốt cay Hàn Quốc, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=2">Gà sốt cay Hàn Quốc</a>
+</h2>
+<span class="product-category">Gà sốt</span>
+<p>Gà giòn phủ sốt cay ngọt. thêm mè rang thơm bùi.</p>
+<div class="product-bottom">
+<strong>45.000 ₫</strong>
+<button class="add-button" data-add="2" aria-label="Thêm Gà sốt cay Hàn Quốc vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=2">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Burger &amp; món kèm" data-name="Burger gà đặc biệt">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=3"><img src="images/hero-banner.png" alt="Burger gà đặc biệt, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=3">Burger gà đặc biệt</a>
+</h2>
+<span class="product-category">Burger &amp; món kèm</span>
+<p>Burger gà. rau tươi và sốt kem cho bữa ăn đầy năng lượng.</p>
+<div class="product-bottom">
+<strong>49.000 ₫</strong>
+<button class="add-button" data-add="3" aria-label="Thêm Burger gà đặc biệt vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=3">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Combo" data-name="Combo một mình vui">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=4"><img src="images/about-banner.png" alt="Combo một mình vui, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=4">Combo một mình vui</a>
+</h2>
+<span class="product-category">Combo</span>
+<p>Một burger. khoai tây và nước uống, đủ đầy cho một bữa ngon.</p>
+<div class="product-bottom">
+<strong>79.000 ₫</strong>
+<button class="add-button" data-add="4" aria-label="Thêm Combo một mình vui vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=4">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Gà rán" data-name="Gà giòn đôi bạn">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=5"><img src="images/food-menu-3.png" alt="Gà giòn đôi bạn, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=5">Gà giòn đôi bạn</a>
+</h2>
+<span class="product-category">Gà rán</span>
+<p>Hai phần gà giòn cho cuộc hẹn vui hơn.</p>
+<div class="product-bottom">
+<strong>75.000 ₫</strong>
+<button class="add-button" data-add="5" aria-label="Thêm Gà giòn đôi bạn vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=5">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Gà rán" data-name="Cánh gà giòn rụm">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=6"><img src="images/food-menu-3.png" alt="Cánh gà giòn rụm, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=6">Cánh gà giòn rụm</a>
+</h2>
+<span class="product-category">Gà rán</span>
+<p>Cánh gà giòn thơm. dùng cùng sốt chấm đặc trưng.</p>
+<div class="product-bottom">
+<strong>59.000 ₫</strong>
+<button class="add-button" data-add="6" aria-label="Thêm Cánh gà giòn rụm vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=6">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Gà sốt" data-name="Gà sốt mật ong">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=7"><img src="images/food-menu-3.png" alt="Gà sốt mật ong, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=7">Gà sốt mật ong</a>
+</h2>
+<span class="product-category">Gà sốt</span>
+<p>Vị mật ong ngọt dịu quyện cùng lớp gà giòn.</p>
+<div class="product-bottom">
+<strong>45.000 ₫</strong>
+<button class="add-button" data-add="7" aria-label="Thêm Gà sốt mật ong vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=7">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Gà sốt" data-name="Gà sốt tỏi">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=8"><img src="images/food-menu-3.png" alt="Gà sốt tỏi, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=8">Gà sốt tỏi</a>
+</h2>
+<span class="product-category">Gà sốt</span>
+<p>Sốt tỏi thơm lừng. đậm đà mà không quá cay.</p>
+<div class="product-bottom">
+<strong>45.000 ₫</strong>
+<button class="add-button" data-add="8" aria-label="Thêm Gà sốt tỏi vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=8">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Burger &amp; món kèm" data-name="Khoai tây chiên">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=9"><img src="images/fries.svg" alt="Khoai tây chiên, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=9">Khoai tây chiên</a>
+</h2>
+<span class="product-category">Burger &amp; món kèm</span>
+<p>Khoai vàng giòn, thêm chút muối, ngon đến miếng cuối.</p>
+<div class="product-bottom">
+<strong>25.000 ₫</strong>
+<button class="add-button" data-add="9" aria-label="Thêm Khoai tây chiên vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=9">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Burger &amp; món kèm" data-name="Burger gà phô mai">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=10"><img src="images/hero-banner.png" alt="Burger gà phô mai, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=10">Burger gà phô mai</a>
+</h2>
+<span class="product-category">Burger &amp; món kèm</span>
+<p>Thêm phô mai béo ngậy cho chiếc burger yêu thích.</p>
+<div class="product-bottom">
+<strong>55.000 ₫</strong>
+<button class="add-button" data-add="10" aria-label="Thêm Burger gà phô mai vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=10">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Combo" data-name="Combo hội bạn">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=11"><img src="images/about-banner.png" alt="Combo hội bạn, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=11">Combo hội bạn</a>
+</h2>
+<span class="product-category">Combo</span>
+<p>Hai burger. hai phần khoai và hai nước để cùng chia sẻ.</p>
+<div class="product-bottom">
+<strong>159.000 ₫</strong>
+<button class="add-button" data-add="11" aria-label="Thêm Combo hội bạn vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=11">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Combo" data-name="Combo no nê">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=12"><img src="images/food-menu-2.png" alt="Combo no nê, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=12">Combo no nê</a>
+</h2>
+<span class="product-category">Combo</span>
+<p>Gà, khoai, rau và món kèm cho một bữa thật trọn vẹn.</p>
+<div class="product-bottom">
+<strong>99.000 ₫</strong>
+<button class="add-button" data-add="12" aria-label="Thêm Combo no nê vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=12">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Đồ uống" data-name="Nước ngọt mát lạnh">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=13"><img src="images/soda.svg" alt="Nước ngọt mát lạnh, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=13">Nước ngọt mát lạnh</a>
+</h2>
+<span class="product-category">Đồ uống</span>
+<p>Một ly nước ngọt mát lạnh. bạn đồng hành của gà giòn.</p>
+<div class="product-bottom">
+<strong>19.000 ₫</strong>
+<button class="add-button" data-add="13" aria-label="Thêm Nước ngọt mát lạnh vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=13">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Đồ uống" data-name="Trà chanh tươi">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=14"><img src="images/lemon-tea.svg" alt="Trà chanh tươi, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=14">Trà chanh tươi</a>
+</h2>
+<span class="product-category">Đồ uống</span>
+<p>Trà chanh thanh mát giúp cân bằng vị giác.</p>
+<div class="product-bottom">
+<strong>25.000 ₫</strong>
+<button class="add-button" data-add="14" aria-label="Thêm Trà chanh tươi vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=14">Xem chi tiết</a>
+</div>
+</article>
+</div>
+<div class="product-wrapper" data-category="Đồ uống" data-name="Trà đào">
+<article class="product-card">
+<a class="product-image" href="product-detail.html?id=15"><img src="images/peach-tea.svg" alt="Trà đào, ảnh minh họa" loading="lazy" width="300" height="240">
+</a>
+<div class="product-info">
+<h2>
+<a href="product-detail.html?id=15">Trà đào</a>
+</h2>
+<span class="product-category">Đồ uống</span>
+<p>Trà đào thơm nhẹ, ngọt dịu, dễ uống.</p>
+<div class="product-bottom">
+<strong>29.000 ₫</strong>
+<button class="add-button" data-add="15" aria-label="Thêm Trà đào vào giỏ">+</button>
+</div>
+<a class="detail-link" href="product-detail.html?id=15">Xem chi tiết</a>
+</div>
+</article>
+</div>
+</div>
+<p id="no-products" class="empty-state" hidden>Chưa tìm thấy món phù hợp. Bạn thử từ khóa khác nhé!</p>
+<p class="muted menu-disclaimer">Ảnh mang tính minh họa; một số món dùng chung ảnh. Giá và khẩu phần phục vụ bài tập, không phải thực đơn kinh doanh thực tế.</p>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-mast" aria-hidden="true">S Chicken.</div>
+</div>
+<div class="container footer-grid">
+<div>
+<a class="footer-logo" href="index.html"><img src="images/logo.svg" width="220" height="59" alt="S Chicken">
+</a>
+<p>Giòn ngon từng miếng,<br>vui trọn từng phút!</p>
+<div class="socials">
+<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook (nền tảng mạng xã hội)">Facebook</a>
+<a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (nền tảng mạng xã hội)">Instagram</a>
+<a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube (nền tảng mạng xã hội)">YouTube</a>
+</div>
+</div>
+<div>
+<h3>Khám phá S Chicken</h3>
+<a href="about.html">Câu chuyện thương hiệu</a>
+<a href="products.html">Thực đơn của chúng tôi</a>
+<a href="product-detail.html?id=1">Món ăn nổi bật</a>
+<a href="blog.html">Tin tức &amp; ưu đãi</a>
+<a href="careers.html">Cơ hội nghề nghiệp</a>
+</div>
+<div>
+<h3>Luôn sẵn sàng hỗ trợ</h3>
+<a href="contact.html">Liên hệ với chúng tôi</a>
+<a href="faq.html">Câu hỏi thường gặp</a>
+<a href="login.html">Đăng nhập / Đăng ký</a>
+<a href="cart.html">Giỏ hàng của bạn</a>
+</div>
+<div>
+<h3>Ghé chơi với chúng mình</h3>
+<p>12 Chùa Bộc, Đống Đa, Hà Nội<br>(Địa chỉ minh họa)</p>
+<p>Điện thoại mẫu: 024 0000 0000<br>Email mẫu: hello@schicken.example<br>Mở cửa: 10:00 đến 22:00 mỗi ngày</p>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>© 2026 S Chicken. Dự án học tập Thiết kế Web.</span><span>Mọi đặt hàng, tài khoản &amp; tuyển dụng đều là mô phỏng.</span>
+</div>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite">
+</div>
+</body>
+</html>
+

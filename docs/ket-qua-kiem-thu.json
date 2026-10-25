@@ -1,0 +1,513 @@
+{
+  "date": "2026-10-24T14:09:48.672645+00:00",
+  "browser": "Chromium /usr/bin/chromium via Python Playwright",
+  "results": [
+    {
+      "name": "index.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Trang chủ | S Chicken",
+        "width": 320,
+        "images": 17
+      }
+    },
+    {
+      "name": "index.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Trang chủ | S Chicken",
+        "width": 375,
+        "images": 17
+      }
+    },
+    {
+      "name": "index.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Trang chủ | S Chicken",
+        "width": 768,
+        "images": 17
+      }
+    },
+    {
+      "name": "index.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Trang chủ | S Chicken",
+        "width": 1280,
+        "images": 17
+      }
+    },
+    {
+      "name": "index.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Trang chủ | S Chicken",
+        "width": 1920,
+        "images": 17
+      }
+    },
+    {
+      "name": "about.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giới thiệu | S Chicken",
+        "width": 320,
+        "images": 5
+      }
+    },
+    {
+      "name": "about.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giới thiệu | S Chicken",
+        "width": 375,
+        "images": 5
+      }
+    },
+    {
+      "name": "about.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giới thiệu | S Chicken",
+        "width": 768,
+        "images": 5
+      }
+    },
+    {
+      "name": "about.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giới thiệu | S Chicken",
+        "width": 1280,
+        "images": 5
+      }
+    },
+    {
+      "name": "about.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giới thiệu | S Chicken",
+        "width": 1920,
+        "images": 5
+      }
+    },
+    {
+      "name": "products.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Thực đơn | S Chicken",
+        "width": 320,
+        "images": 17
+      }
+    },
+    {
+      "name": "products.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Thực đơn | S Chicken",
+        "width": 375,
+        "images": 17
+      }
+    },
+    {
+      "name": "products.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Thực đơn | S Chicken",
+        "width": 768,
+        "images": 17
+      }
+    },
+    {
+      "name": "products.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Thực đơn | S Chicken",
+        "width": 1280,
+        "images": 17
+      }
+    },
+    {
+      "name": "products.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Thực đơn | S Chicken",
+        "width": 1920,
+        "images": 17
+      }
+    },
+    {
+      "name": "product-detail.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Gà giòn nguyên bản | S Chicken",
+        "width": 320,
+        "images": 7
+      }
+    },
+    {
+      "name": "product-detail.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Gà giòn nguyên bản | S Chicken",
+        "width": 375,
+        "images": 7
+      }
+    },
+    {
+      "name": "product-detail.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Gà giòn nguyên bản | S Chicken",
+        "width": 768,
+        "images": 7
+      }
+    },
+    {
+      "name": "product-detail.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Gà giòn nguyên bản | S Chicken",
+        "width": 1280,
+        "images": 7
+      }
+    },
+    {
+      "name": "product-detail.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Gà giòn nguyên bản | S Chicken",
+        "width": 1920,
+        "images": 7
+      }
+    },
+    {
+      "name": "blog.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tin tức & ưu đãi | S Chicken",
+        "width": 320,
+        "images": 8
+      }
+    },
+    {
+      "name": "blog.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tin tức & ưu đãi | S Chicken",
+        "width": 375,
+        "images": 8
+      }
+    },
+    {
+      "name": "blog.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tin tức & ưu đãi | S Chicken",
+        "width": 768,
+        "images": 8
+      }
+    },
+    {
+      "name": "blog.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tin tức & ưu đãi | S Chicken",
+        "width": 1280,
+        "images": 8
+      }
+    },
+    {
+      "name": "blog.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tin tức & ưu đãi | S Chicken",
+        "width": 1920,
+        "images": 8
+      }
+    },
+    {
+      "name": "contact.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Liên hệ | S Chicken",
+        "width": 320,
+        "images": 2
+      }
+    },
+    {
+      "name": "contact.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Liên hệ | S Chicken",
+        "width": 375,
+        "images": 2
+      }
+    },
+    {
+      "name": "contact.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Liên hệ | S Chicken",
+        "width": 768,
+        "images": 2
+      }
+    },
+    {
+      "name": "contact.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Liên hệ | S Chicken",
+        "width": 1280,
+        "images": 2
+      }
+    },
+    {
+      "name": "contact.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Liên hệ | S Chicken",
+        "width": 1920,
+        "images": 2
+      }
+    },
+    {
+      "name": "faq.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Câu hỏi thường gặp | S Chicken",
+        "width": 320,
+        "images": 2
+      }
+    },
+    {
+      "name": "faq.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Câu hỏi thường gặp | S Chicken",
+        "width": 375,
+        "images": 2
+      }
+    },
+    {
+      "name": "faq.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Câu hỏi thường gặp | S Chicken",
+        "width": 768,
+        "images": 2
+      }
+    },
+    {
+      "name": "faq.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Câu hỏi thường gặp | S Chicken",
+        "width": 1280,
+        "images": 2
+      }
+    },
+    {
+      "name": "faq.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Câu hỏi thường gặp | S Chicken",
+        "width": 1920,
+        "images": 2
+      }
+    },
+    {
+      "name": "login.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Đăng nhập & Đăng ký | S Chicken",
+        "width": 320,
+        "images": 3
+      }
+    },
+    {
+      "name": "login.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Đăng nhập & Đăng ký | S Chicken",
+        "width": 375,
+        "images": 3
+      }
+    },
+    {
+      "name": "login.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Đăng nhập & Đăng ký | S Chicken",
+        "width": 768,
+        "images": 3
+      }
+    },
+    {
+      "name": "login.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Đăng nhập & Đăng ký | S Chicken",
+        "width": 1280,
+        "images": 3
+      }
+    },
+    {
+      "name": "login.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Đăng nhập & Đăng ký | S Chicken",
+        "width": 1920,
+        "images": 3
+      }
+    },
+    {
+      "name": "cart.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giỏ hàng | S Chicken",
+        "width": 320,
+        "images": 2
+      }
+    },
+    {
+      "name": "cart.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giỏ hàng | S Chicken",
+        "width": 375,
+        "images": 2
+      }
+    },
+    {
+      "name": "cart.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giỏ hàng | S Chicken",
+        "width": 768,
+        "images": 2
+      }
+    },
+    {
+      "name": "cart.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giỏ hàng | S Chicken",
+        "width": 1280,
+        "images": 2
+      }
+    },
+    {
+      "name": "cart.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Giỏ hàng | S Chicken",
+        "width": 1920,
+        "images": 2
+      }
+    },
+    {
+      "name": "careers.html at 320px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tuyển dụng | S Chicken",
+        "width": 320,
+        "images": 3
+      }
+    },
+    {
+      "name": "careers.html at 375px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tuyển dụng | S Chicken",
+        "width": 375,
+        "images": 3
+      }
+    },
+    {
+      "name": "careers.html at 768px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tuyển dụng | S Chicken",
+        "width": 768,
+        "images": 3
+      }
+    },
+    {
+      "name": "careers.html at 1280px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tuyển dụng | S Chicken",
+        "width": 1280,
+        "images": 3
+      }
+    },
+    {
+      "name": "careers.html at 1920px",
+      "status": "PASS",
+      "detail": {
+        "title": "Tuyển dụng | S Chicken",
+        "width": 1920,
+        "images": 3
+      }
+    },
+    {
+      "name": "Cart purchase, quantity, delete, persistence, checkout",
+      "status": "PASS",
+      "detail": "137000 → 176000 → 78000; persistence; checkout clears demo cart"
+    },
+    {
+      "name": "Malformed cart recovery and duplicate item normalization",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Categories, keyword search, empty result, category URL",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Product details, quantity bounds, add, invalid ID",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All FAQ answers open and close",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "All article read-more controls",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Login, register mismatch/success, contact/career demo forms",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Mobile menu opens and Escape restores focus",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "Core homepage content and order link visible without JavaScript",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "No JavaScript page errors",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "page_errors": [],
+  "passed": 60,
+  "failed": 0,
+  "limitations": [
+    "External Google Maps blocked during test; no live backend exists by project design.",
+    "Firefox and WebKit not tested."
+  ]
+}

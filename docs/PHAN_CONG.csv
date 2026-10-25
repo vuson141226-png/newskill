@@ -1,0 +1,5 @@
+﻿Mã thành viên,Họ tên,Vai trò,Nhiệm vụ / tệp phụ trách,Ngày bắt đầu,Hạn hoàn thành,Trạng thái,Minh chứng,Tự đánh giá /10,Nhóm đánh giá /10,Tỷ lệ đóng góp thực tế,Ghi chú
+TV01,Điền tên thành viên 1,HTML và thương hiệu,"index.html, about.html, header/footer, logo.svg",,,Chưa cập nhật,,,,,Mẫu; nhóm tự đánh giá
+TV02,Điền tên thành viên 2,CSS và responsive,"css/style.css, bố cục 375/768/1440 px",,,Chưa cập nhật,,,,,
+TV03,Điền tên thành viên 3,Sản phẩm và giỏ hàng,"products.html, product-detail.html, cart.html, products.js, cart.js",,,Chưa cập nhật,,,,,
+TV04,Điền tên thành viên 4,Tương tác và kiểm thử,"blog, contact, faq, login, careers, main.js, kiểm thử và báo cáo",,,Chưa cập nhật,,,,,

@@ -1,0 +1,2 @@
+# Finish review
+Independent reviewer found: featured blog grid on wrong wrapper; mobile hero price wrapping; FAQ question row constrained; mobile FAQ help preceding questions. All four fixed. Parent recaptured and checked homepage/blog/FAQ at320,375,1280 (9 passed). Final blog desktop screenshot inspected visually. No fabricated render-tier pass. Static Hallmark and independent Chromium test results in docs.

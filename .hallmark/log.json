@@ -1,0 +1,39 @@
+[
+  {
+    "date": "2026-10-24",
+    "mode": "redesign",
+    "depth": "full",
+    "scope": "site",
+    "shape": "Offer",
+    "theme": "brand",
+    "axes": "light/grotesk-heavy/warm",
+    "hero": "Banner",
+    "nav": "compact restaurant counter",
+    "footer": "brand mast and directory",
+    "imagery": "14 supplied local image assets, reused with demo notices",
+    "photos": [
+      "food-menu-3.png",
+      "about-banner.png",
+      "about-banner.jpg"
+    ],
+    "entry": "index.html",
+    "fingerprint": "s-chicken-cream-red-food-offer",
+    "sections": [
+      "hero",
+      "categories",
+      "products",
+      "combo",
+      "story",
+      "benefits",
+      "news",
+      "order"
+    ],
+    "signature": "supplied sauced chicken plate on solid red field",
+    "waived": [
+      "11",
+      "59",
+      "80"
+    ],
+    "prompt": "S Chicken full redesign, 10 static HTML pages, preserve content and functions"
+  }
+]

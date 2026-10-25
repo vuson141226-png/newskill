@@ -1,0 +1,62 @@
+[
+  {
+    "page": "about.html",
+    "form_fields_preserved": 0,
+    "original_link_destinations_preserved": 14,
+    "ids_preserved": 3
+  },
+  {
+    "page": "blog.html",
+    "form_fields_preserved": 0,
+    "original_link_destinations_preserved": 14,
+    "ids_preserved": 15
+  },
+  {
+    "page": "careers.html",
+    "form_fields_preserved": 5,
+    "original_link_destinations_preserved": 14,
+    "ids_preserved": 5
+  },
+  {
+    "page": "cart.html",
+    "form_fields_preserved": 0,
+    "original_link_destinations_preserved": 14,
+    "ids_preserved": 7
+  },
+  {
+    "page": "contact.html",
+    "form_fields_preserved": 5,
+    "original_link_destinations_preserved": 14,
+    "ids_preserved": 3
+  },
+  {
+    "page": "faq.html",
+    "form_fields_preserved": 0,
+    "original_link_destinations_preserved": 14,
+    "ids_preserved": 12
+  },
+  {
+    "page": "index.html",
+    "form_fields_preserved": 0,
+    "original_link_destinations_preserved": 26,
+    "ids_preserved": 3
+  },
+  {
+    "page": "login.html",
+    "form_fields_preserved": 6,
+    "original_link_destinations_preserved": 14,
+    "ids_preserved": 5
+  },
+  {
+    "page": "product-detail.html",
+    "form_fields_preserved": 0,
+    "original_link_destinations_preserved": 14,
+    "ids_preserved": 5
+  },
+  {
+    "page": "products.html",
+    "form_fields_preserved": 0,
+    "original_link_destinations_preserved": 28,
+    "ids_preserved": 7
+  }
+]
