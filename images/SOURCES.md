@@ -20,7 +20,7 @@ Hai ảnh được tạo bằng AI theo yêu cầu người dùng, tham chiếu 
 
 ## Ảnh thực đơn tạo ngày 25/10/2026
 
-Năm ảnh dưới được tạo bằng AI theo mô tả món, nền kem và có dòng “Ảnh minh họa”; không phải ảnh chụp phần ăn thực tế.
+Năm ảnh dưới được tạo bằng AI theo mô tả món, nền kem; dòng chữ trên ảnh đã được xóa theo yêu cầu; không phải ảnh chụp phần ăn thực tế.
 
 - `combo-mot-minh-vui.png`
 - `ga-gion-doi-ban.png`
