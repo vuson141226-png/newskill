@@ -6,3 +6,10 @@
 - Logo, khoai, ba ly nước, đội ngũ là SVG gốc được tạo cho dự án S Chicken.
 
 Tệp ảnh đã tải cục bộ. Không dùng ảnh để nhận là cửa hàng hoặc nhân sự thật. Ảnh sản phẩm có thể được dùng chung cho các món gần nhau và chỉ minh họa. Nếu cần quyền ảnh thương mại rõ ràng, thay bằng ảnh tự chụp hoặc kiểm tra lại cấp phép từng ảnh với tác giả.
+
+## Ảnh ý tưởng S Chicken được tạo ngày 25/10/2026
+
+- `s-chicken-exterior.png`: hình ảnh mặt tiền quán với logo S Chicken.
+- `s-chicken-interior.png`: hình ảnh không gian nội thất quán.
+
+Hai ảnh được tạo bằng AI theo yêu cầu người dùng, tham chiếu logo SVG của dự án; là hình minh họa ý tưởng, không phải ảnh chụp cửa hàng có thật.
