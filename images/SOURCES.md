@@ -17,3 +17,13 @@ Hai ảnh được tạo bằng AI theo yêu cầu người dùng, tham chiếu 
 - `s-chicken-kitchen.png`: ảnh ý tưởng căn bếp S Chicken, tạo bằng AI ngày 25/10/2026, đồng bộ nhận diện với ảnh nội thất. Không phải ảnh chụp căn bếp hoặc nhân viên có thật.
 
 - `s-chicken-team.png`: ảnh phong cách chụp thực tế gồm ba nhân viên trước nhà hàng S Chicken, tạo bằng AI ngày 25/10/2026 theo bố cục minh họa đội ngũ. Người và nhà hàng trong ảnh là nội dung minh họa, không phải nhân sự hoặc địa điểm có thật.
+
+## Ảnh thực đơn tạo ngày 25/10/2026
+
+Năm ảnh dưới được tạo bằng AI theo mô tả món, nền kem và có dòng “Ảnh minh họa”; không phải ảnh chụp phần ăn thực tế.
+
+- `combo-mot-minh-vui.png`
+- `ga-gion-doi-ban.png`
+- `canh-ga-gion-rum.png`
+- `ga-sot-mat-ong.png`
+- `ga-sot-toi.png`
