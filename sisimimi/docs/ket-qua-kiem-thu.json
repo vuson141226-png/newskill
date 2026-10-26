@@ -1,0 +1,499 @@
+{
+  "started_at": "2026-10-26T16:55:17.201Z",
+  "finished_at": "2026-10-26T16:55:38.381Z",
+  "browser": "Chromium qua Playwright",
+  "base_url": "http://127.0.0.1:8000/sisimimi/",
+  "viewport_widths": [
+    320,
+    375,
+    768,
+    1280,
+    1920
+  ],
+  "summary": {
+    "passed": 78,
+    "failed": 0,
+    "skipped": 0,
+    "viewport_cases": 55,
+    "other_cases": 23
+  },
+  "local_links_checked": 29,
+  "javascript_errors": [],
+  "failed_local_http_responses": [],
+  "post_requests": [],
+  "limitations": [
+    "Không xác minh Google Maps hoặc dịch vụ ngoài; các yêu cầu ngoài đã được chặn.",
+    "Chưa chạy Chrome, Edge, Firefox cài riêng, thiết bị thật hoặc trình đọc màn hình.",
+    "Số case gồm tổ hợp trang × viewport và các nhóm chức năng; không phải số kịch bản nghiệp vụ độc lập."
+  ],
+  "results": [
+    {
+      "name": "index.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 200
+    },
+    {
+      "name": "about.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 139
+    },
+    {
+      "name": "products.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 176
+    },
+    {
+      "name": "product-detail.html?id=1 @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 126
+    },
+    {
+      "name": "news.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 124
+    },
+    {
+      "name": "news-detail.html?id=1 @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 111
+    },
+    {
+      "name": "contact.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 173
+    },
+    {
+      "name": "faq.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 114
+    },
+    {
+      "name": "login.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 111
+    },
+    {
+      "name": "cart.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 127
+    },
+    {
+      "name": "careers.html @ 320px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 133
+    },
+    {
+      "name": "index.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 156
+    },
+    {
+      "name": "about.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 129
+    },
+    {
+      "name": "products.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 158
+    },
+    {
+      "name": "product-detail.html?id=1 @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 118
+    },
+    {
+      "name": "news.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 117
+    },
+    {
+      "name": "news-detail.html?id=1 @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 115
+    },
+    {
+      "name": "contact.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 172
+    },
+    {
+      "name": "faq.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 127
+    },
+    {
+      "name": "login.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 102
+    },
+    {
+      "name": "cart.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 122
+    },
+    {
+      "name": "careers.html @ 375px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 117
+    },
+    {
+      "name": "index.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 182
+    },
+    {
+      "name": "about.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 174
+    },
+    {
+      "name": "products.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 175
+    },
+    {
+      "name": "product-detail.html?id=1 @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 117
+    },
+    {
+      "name": "news.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 126
+    },
+    {
+      "name": "news-detail.html?id=1 @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 122
+    },
+    {
+      "name": "contact.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 167
+    },
+    {
+      "name": "faq.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 116
+    },
+    {
+      "name": "login.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 111
+    },
+    {
+      "name": "cart.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 127
+    },
+    {
+      "name": "careers.html @ 768px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 112
+    },
+    {
+      "name": "index.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 170
+    },
+    {
+      "name": "about.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 116
+    },
+    {
+      "name": "products.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 164
+    },
+    {
+      "name": "product-detail.html?id=1 @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 122
+    },
+    {
+      "name": "news.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 131
+    },
+    {
+      "name": "news-detail.html?id=1 @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 127
+    },
+    {
+      "name": "contact.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 138
+    },
+    {
+      "name": "faq.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 112
+    },
+    {
+      "name": "login.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 121
+    },
+    {
+      "name": "cart.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 128
+    },
+    {
+      "name": "careers.html @ 1280px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 119
+    },
+    {
+      "name": "index.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 168
+    },
+    {
+      "name": "about.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 140
+    },
+    {
+      "name": "products.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 180
+    },
+    {
+      "name": "product-detail.html?id=1 @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 132
+    },
+    {
+      "name": "news.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 132
+    },
+    {
+      "name": "news-detail.html?id=1 @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 119
+    },
+    {
+      "name": "contact.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 184
+    },
+    {
+      "name": "faq.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 125
+    },
+    {
+      "name": "login.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 121
+    },
+    {
+      "name": "cart.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 133
+    },
+    {
+      "name": "careers.html @ 1920px",
+      "group": "viewport",
+      "status": "passed",
+      "duration_ms": 132
+    },
+    {
+      "name": "Mọi liên kết HTML cục bộ trả HTTP 200",
+      "group": "resources",
+      "status": "passed",
+      "duration_ms": 78
+    },
+    {
+      "name": "Danh sách 12 sản phẩm, lọc danh mục và tìm không dấu",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 396
+    },
+    {
+      "name": "Không có kết quả và kết hợp tìm với lọc",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 310
+    },
+    {
+      "name": "Danh mục truyền qua URL",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 137
+    },
+    {
+      "name": "Chi tiết đúng ID, giới hạn số lượng 1–99",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 166
+    },
+    {
+      "name": "ID sản phẩm không tồn tại",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 96
+    },
+    {
+      "name": "Thêm từ danh sách và chi tiết, tổng 337.000 ₫",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 831
+    },
+    {
+      "name": "Tăng, giảm, xóa và lưu giỏ: 496.000 → 337.000 → 496.000 → 318.000 ₫",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 228
+    },
+    {
+      "name": "Hủy thanh toán giữ giỏ, xác nhận mô phỏng làm trống giỏ",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 263
+    },
+    {
+      "name": "Giỏ dữ liệu null và JSON hỏng vẫn dùng được",
+      "group": "robustness",
+      "status": "passed",
+      "duration_ms": 511
+    },
+    {
+      "name": "Giỏ bỏ ID lạ/số âm, gộp ID trùng, giới hạn 99",
+      "group": "robustness",
+      "status": "passed",
+      "duration_ms": 191
+    },
+    {
+      "name": "10 câu FAQ mở và đóng bằng bàn phím",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 141
+    },
+    {
+      "name": "Menu điện thoại, phím Escape",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 190
+    },
+    {
+      "name": "Bốn bài viết có chi tiết riêng và xử lý ID lạ",
+      "group": "functional",
+      "status": "passed",
+      "duration_ms": 672
+    },
+    {
+      "name": "Đăng nhập hợp lệ chỉ mô phỏng",
+      "group": "forms",
+      "status": "passed",
+      "duration_ms": 1016
+    },
+    {
+      "name": "Đăng ký chặn email sai, mật khẩu lệch và xử lý hợp lệ",
+      "group": "forms",
+      "status": "passed",
+      "duration_ms": 679
+    },
+    {
+      "name": "Liên hệ chặn khoảng trắng/điện thoại sai, không gửi thực tế",
+      "group": "forms",
+      "status": "passed",
+      "duration_ms": 1554
+    },
+    {
+      "name": "Ứng tuyển chọn vị trí, chặn CV sai loại/quá lớn, nhận CV mẫu",
+      "group": "forms",
+      "status": "passed",
+      "duration_ms": 2656
+    },
+    {
+      "name": "Giảm chuyển động tắt animation ở banner",
+      "group": "accessibility",
+      "status": "passed",
+      "duration_ms": 544
+    },
+    {
+      "name": "Tắt JavaScript: form không gửi qua nút hoặc Enter",
+      "group": "no-javascript",
+      "status": "passed",
+      "duration_ms": 1434
+    },
+    {
+      "name": "Tắt JavaScript: FAQ native vẫn mở và đóng",
+      "group": "no-javascript",
+      "status": "passed",
+      "duration_ms": 517
+    },
+    {
+      "name": "Không POST, không lưu mật khẩu/thông tin cá nhân",
+      "group": "privacy",
+      "status": "passed",
+      "duration_ms": 59
+    },
+    {
+      "name": "Không lỗi JavaScript hoặc tài nguyên cục bộ HTTP 4xx/5xx",
+      "group": "resources",
+      "status": "passed",
+      "duration_ms": 0
+    }
+  ]
+}

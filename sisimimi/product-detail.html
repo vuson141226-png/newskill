@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="sisimimi — Thế giới nhỏ dành cho bé yêu. Website mẫu đồ dùng và phụ kiện thú cưng, bài tập HTML, CSS và JavaScript.">
+    <meta name="theme-color" content="#FFD6E5">
+    <title>Chi tiết sản phẩm | sisimimi</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <!-- Một file CSS chung; defer giúp JavaScript chạy sau khi HTML đã được đọc -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Chuyển đến nội dung</a>
+    <div class="announcement">
+      Một thế giới nhỏ, ngập tràn yêu thương <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 5c-3-3-7-1-8 1-1-2-5-4-8-1-5 5 8 15 8 15S25 10 20 5Z"/></svg> Dành cho chó &amp; mèo
+    </div>
+    <!-- Header được viết trực tiếp và giữ cùng cấu trúc ở 11 trang -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html" aria-label="sisimimi — Trang chủ"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2.2"/><circle cx="16" cy="7" r="2.2"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M6 19c0-3 3-7 6-7s6 4 6 7c0 4-4 1-6 1s-6 3-6-1Z"/></svg><span>sisimimi<span class="logo-dot">.</span><small>THẾ GIỚI NHỎ DÀNH CHO BÉ YÊU</small></span></a>
+        <button class="menu-toggle icon-button" aria-label="Mở menu điều hướng" aria-controls="main-nav" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <nav id="main-nav" class="main-nav" aria-label="Điều hướng chính">
+          <a href="index.html">Trang chủ</a><a href="about.html">Giới thiệu</a><a href="products.html" class="active" aria-current="page">Sản phẩm</a><a href="news.html">Tin tức</a><a href="contact.html">Liên hệ</a>
+          <details class="nav-more">
+            <summary>Khám phá <span aria-hidden="true">⌄</span></summary>
+            <div>
+              <a href="faq.html">Câu hỏi thường gặp</a><a href="careers.html">Tuyển dụng</a>
+            </div>
+          </details>
+        </nav>
+        <div class="header-actions">
+          <a class="icon-button" href="login.html" aria-label="Tài khoản"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></a><a class="cart-link icon-button" href="cart.html" aria-label="Giỏ hàng"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l2 13H3L5 8Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg><span class="cart-count">0</span></a>
+        </div>
+      </div>
+    </header>
+    <!-- Nội dung riêng của trang product-detail.html -->
+    <main id="main-content">
+      <div class="container breadcrumb">
+        <a href="index.html">Trang chủ</a><span>/</span><a href="products.html">Sản phẩm</a><span>/</span><span>Chi tiết sản phẩm</span>
+      </div>
+      <section class="container section" id="product-detail">
+        <h1>Chi tiết sản phẩm</h1>
+        <p>Đang chọn món xinh cho bé…</p>
+        <noscript>Bật JavaScript để xem thông tin theo mã sản phẩm.</noscript>
+      </section>
+      <section class="container section">
+        <div class="review-card">
+          <div>
+            <p class="eyebrow">Lời nhắn từ người thương bé</p>
+            <h2>Một chút cảm nhận</h2>
+          </div>
+          <blockquote>
+            <span class="stars" aria-label="5 trên 5 sao">★★★★★</span>
+            <p>“Màu sắc nhẹ nhàng, nhìn món nào cũng muốn chọn cho bé. Mình thích nhất phần thông tin dễ đọc!”</p>
+            <cite>Khách hàng Mây · Nhận xét mẫu, không phải giao dịch thật</cite>
+          </blockquote>
+        </div>
+      </section>
+    </main>
+    <!-- Footer: thông tin mẫu được ghi rõ để tránh hiểu là cửa hàng thật -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2.2"/><circle cx="16" cy="7" r="2.2"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M6 19c0-3 3-7 6-7s6 4 6 7c0 4-4 1-6 1s-6 3-6-1Z"/></svg><span>sisimimi<span class="logo-dot">.</span></span></a>
+          <p>Thế giới nhỏ dành cho bé yêu.</p>
+          <p>Những món đồ xinh xắn, cho những người bạn đặc biệt nhất của chúng mình.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook, liên kết nền tảng minh họa">Facebook ↗</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram, liên kết nền tảng minh họa">Instagram ↗</a>
+          </div>
+        </div>
+        <div>
+          <h2>Ghé thăm sisimimi</h2><a href="about.html">Về chúng mình</a><a href="products.html">Góc mua sắm</a><a href="news.html">Nhật ký của bé</a><a href="careers.html">Cùng làm việc</a>
+        </div>
+        <div>
+          <h2>Chúng mình hỗ trợ</h2><a href="contact.html">Liên hệ</a><a href="faq.html">Câu hỏi thường gặp</a><a href="cart.html">Giỏ hàng của bạn</a><a href="login.html">Tài khoản</a>
+        </div>
+        <div>
+          <h2>Thông tin minh họa</h2>
+          <p>12 Chùa Bộc, Đống Đa, Hà Nội</p>
+          <p>0900 123 456</p>
+          <p>hello@sisimimi.example</p>
+          <p>09:00 – 21:00, mỗi ngày</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 sisimimi. Được làm với thật nhiều yêu thương ♡</p>
+        <p>Bài tập thiết kế web · Mua hàng, tài khoản và biểu mẫu đều mô phỏng.</p>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite">
+    </div>
+  </body>
+</html>

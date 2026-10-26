@@ -1,3 +1,18 @@
+# Các dự án Thiết kế Web
+
+## Mới: sisimimi — Thế giới nhỏ dành cho bé yêu
+
+Website thú cưng **11 trang**, giao diện hồng pastel, HTML/CSS/JavaScript thuần. Mở **[sisimimi/index.html](sisimimi/index.html)** bằng Live Server sau khi tải kho mã về máy.
+
+- [Mã nguồn và hướng dẫn chạy](sisimimi/README.md)
+- [Hướng dẫn học theo 9 giai đoạn](sisimimi/docs/HUONG_DAN.md)
+- [PowerPoint báo cáo](sisimimi/docs/BAO_CAO.pptx) · [Excel phân công](sisimimi/docs/PHAN_CONG.xlsx)
+- [Kết quả kiểm thử](sisimimi/docs/KIEM_THU.md)
+
+Thư mục `sisimimi/` độc lập với dự án S Chicken bên dưới. Có thể tải riêng gói `NhomX_sisimimi.zip` trong kho mã, giải nén và mở thư mục `sisimimi` bằng Visual Studio Code. Thay `X` bằng số nhóm thật trước khi nộp bài.
+
+---
+
 # S Chicken — Website Thiết kế Web
 
 Bản thiết kế lại gồm **10 trang HTML**, dùng HTML5, CSS3 và JavaScript thuần. Website không dùng framework, backend, cơ sở dữ liệu, npm hay công cụ build. Logo, 15 món, ID, giá bán và dữ liệu minh họa của dự án ban đầu được giữ lại.

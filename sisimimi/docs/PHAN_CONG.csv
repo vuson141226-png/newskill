@@ -1,0 +1,9 @@
+﻿STT,Họ tên thành viên,Mã sinh viên,Công việc được giao,Trang phụ trách,Tiến độ,Mức độ hoàn thành,Điểm đánh giá,Nhận xét
+1,,,"Khảo sát đề bài, nội dung và nhận diện",index.html; about.html,,,,
+2,,,"Danh sách, chi tiết sản phẩm và tìm kiếm",products.html; product-detail.html,,,,
+3,,,Tin tức và chi tiết bài viết,news.html; news-detail.html,,,,
+4,,,"Liên hệ, FAQ và tài khoản",contact.html; faq.html; login.html,,,,
+5,,,Giỏ hàng và tuyển dụng,cart.html; careers.html,,,,
+6,,,"CSS chung, responsive và hình minh họa",css/style.css; images/,,,,
+7,,,"JavaScript, kiểm thử và sửa lỗi",js/script.js; toàn bộ website,,,,
+8,,,"Tài liệu, PowerPoint, tổng hợp bài nộp",README.md; docs/,,,,
