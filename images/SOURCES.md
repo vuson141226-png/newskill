@@ -27,3 +27,7 @@ Năm ảnh dưới được tạo bằng AI theo mô tả món, nền kem; dòng
 - `canh-ga-gion-rum.png`
 - `ga-sot-mat-ong.png`
 - `ga-sot-toi.png`
+
+## Bộ ảnh thực đơn tách nền ngày 26/10/2026
+
+15 PNG RGBA được tạo bằng AI theo mô tả menu, không có chữ và có nền trong suốt. Danh sách, ID món và tên tệp: [MENU_IMAGES.md](MENU_IMAGES.md); kết quả kiểm tra alpha: [menu-transparent.json](menu-transparent.json). Các tệp cùng tên trong bộ 5 ảnh cũ đã được thay bằng phiên bản tách nền.
