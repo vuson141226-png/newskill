@@ -2,9 +2,9 @@
 
 ## Mới: sisimimi — Thế giới nhỏ dành cho bé yêu
 
-Website thú cưng **11 trang**, giao diện hồng pastel, HTML/CSS/JavaScript thuần. Mở **[sisimimi/index.html](sisimimi/index.html)** bằng Live Server sau khi tải kho mã về máy.
+Website bán đồ **dành riêng cho chó và cún con**, có **11 trang**, giao diện hồng pastel, HTML/CSS/JavaScript thuần. Mở **[sisimimi/index.html](sisimimi/index.html)** bằng Live Server sau khi tải kho mã về máy.
 
-Bản sisimimi đã được chỉnh theo cách triển khai trong ZIP **S-Chicken (2).zip**: bố cục trang chủ, điều hướng, thẻ sản phẩm HTML có sẵn và ba tệp JavaScript tách riêng. Xem [đối chiếu mẫu tham chiếu](sisimimi/docs/THAM_CHIEU.md).
+Bản sisimimi đã được chỉnh theo cách triển khai trong ZIP **S-Chicken (2).zip**: bố cục trang chủ, điều hướng, thẻ sản phẩm HTML có sẵn và ba tệp JavaScript tách riêng. Bộ 12 ảnh sản phẩm dùng PNG nền trong suốt theo phong cách ảnh chụp. Xem [đối chiếu mẫu tham chiếu](sisimimi/docs/THAM_CHIEU.md).
 
 - [Mã nguồn và hướng dẫn chạy](sisimimi/README.md)
 - [Hướng dẫn học theo 9 giai đoạn](sisimimi/docs/HUONG_DAN.md)

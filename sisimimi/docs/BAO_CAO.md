@@ -10,11 +10,11 @@
 
 ### Slide 2 — Giới thiệu đề tài
 
-Website bán đồ dùng, thức ăn, quần áo và phụ kiện dành cho chó, mèo. Khách hàng mục tiêu là những người yêu thú cưng. Đây là cửa hàng mô phỏng để học thiết kế giao diện và tương tác ở trình duyệt.
+Website bán đồ dùng, thức ăn, quần áo và phụ kiện dành cho chó và cún con. Khách hàng mục tiêu là những người yêu thú cưng. Đây là cửa hàng mô phỏng để học thiết kế giao diện và tương tác ở trình duyệt.
 
 ### Slide 3 — Lý do chọn đề tài
 
-Chủ đề thú cưng gần gũi, dễ xây dựng dữ liệu mẫu và phù hợp phong cách nhẹ nhàng. Bài toán bán hàng giúp thực hành danh sách, chi tiết, tìm kiếm, biểu mẫu và giỏ hàng trong một sản phẩm thống nhất.
+Chủ đề chó và cún con gần gũi, dễ xây dựng dữ liệu mẫu và phù hợp phong cách nhẹ nhàng. Bài toán bán hàng giúp thực hành danh sách, chi tiết, tìm kiếm, biểu mẫu và giỏ hàng trong một sản phẩm thống nhất.
 
 ### Slide 4 — Mục tiêu và phạm vi
 
@@ -26,7 +26,7 @@ HTML5 tạo cấu trúc ngữ nghĩa. CSS3 dùng Flexbox/Grid, media query, hove
 
 ### Slide 6 — Cấu trúc thư mục
 
-11 HTML ở thư mục `sisimimi`, một stylesheet `css/style.css`, ba script `js/products.js`, `js/cart.js`, `js/main.js`, thư mục `images` chứa SVG cục bộ và thư mục `docs` chứa tài liệu. Đường dẫn tương đối giúp mang dự án sang máy khác mà không cần thay đường dẫn ổ đĩa.
+11 HTML ở thư mục `sisimimi`, một stylesheet `css/style.css`, ba script `js/products.js`, `js/cart.js`, `js/main.js`, thư mục `images` chứa ảnh sản phẩm PNG nền trong suốt và hình thương hiệu cục bộ; thư mục `docs` chứa tài liệu. Đường dẫn tương đối giúp mang dự án sang máy khác mà không cần thay đường dẫn ổ đĩa.
 
 ### Slide 7 — Sơ đồ liên kết
 
@@ -51,7 +51,7 @@ Header/footer giúp di chuyển đến các trang chính. Mũi tên mô tả lu�
 
 ### Slide 8 — Giao diện và nhận diện
 
-Hồng pastel kết hợp trắng hồng và kem; chữ nâu đậm. Nút bo tròn, card đồng bộ, hình minh họa thú cưng tự chứa ở máy người dùng. Header/footer thống nhất và trang đang mở được đánh dấu. Bố cục dựa trên tệp người dùng cung cấp `S-Chicken(2).zip`: hero, dải lợi ích, danh mục, sản phẩm, khuyến mãi, câu chuyện và tin tức. Màu sắc, nội dung và minh họa chuyển sang thú cưng; không dùng thư viện giao diện. Slide 8 trong PowerPoint có hai ảnh chụp thật từ website bằng Chromium ở viewport 1280 × 900px: [trang chủ](giao-dien-trang-chu.png) và [sản phẩm](giao-dien-san-pham.png).
+Hồng pastel kết hợp trắng hồng và kem; chữ nâu đậm. Nút bo tròn, card đồng bộ, ảnh sản phẩm PNG nền trong suốt và minh họa chó/cún lưu cục bộ. Header/footer thống nhất và trang đang mở được đánh dấu. Bố cục dựa trên tệp người dùng cung cấp `S-Chicken(2).zip`: hero, dải lợi ích, danh mục, sản phẩm, khuyến mãi, câu chuyện và tin tức. Màu sắc, nội dung và minh họa chuyển sang chó/cún; không dùng thư viện giao diện. Slide 8 trong PowerPoint có hai ảnh chụp thật từ website bằng Chromium ở viewport 1280 × 900px: [trang chủ](giao-dien-trang-chu.png) và [sản phẩm](giao-dien-san-pham.png).
 
 ### Slide 9 — Sản phẩm và tin tức
 
@@ -112,7 +112,7 @@ Chuẩn bị sẵn giỏ trống trước demo. Giữ nguyên tên miền/cổng
 
 **Chọn CV đã tải hồ sơ lên chưa?** Chưa; trình duyệt chỉ chọn tệp cục bộ. Không có backend hoặc thao tác gửi tệp.
 
-**Vì sao dùng SVG?** Hình vector sắc nét, tệp tự chứa, chỉnh màu được và không cần mạng. Đây là minh họa, không giả làm ảnh hàng thật.
+**Vì sao dùng PNG nền trong suốt cho sản phẩm?** PNG có kênh alpha, giúp sản phẩm tách khỏi nền và hiển thị trên card hồng/kem. Đây là ảnh minh họa được tạo bằng AI theo phong cách chụp sản phẩm, không phải ảnh hàng vật lý đã được kiểm chứng. Banner `hero-dogs.png` cũng có nền trong suốt. Bốn SVG còn lại chỉ gồm logo và ba chân dung đội ngũ. Đường dẫn sản phẩm dùng `product-N.png` và được lưu cục bộ.
 
 **Vì sao không dùng Bootstrap/React?** Đề yêu cầu HTML/CSS/JavaScript thuần, đồng thời giúp người mới hiểu bố cục và sự kiện cơ bản.
 

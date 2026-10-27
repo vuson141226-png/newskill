@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-28",
+  "method": "Read-only PNG alpha inspection; no pixel editing",
+  "passed": 13,
+  "images": [
+    {
+      "file": "hero-dogs.png",
+      "size": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 749120,
+      "total_pixels": 1573088,
+      "sha256": "cc9568cb40be800952ef1859db3ca43a084370eebd86aaa15f1d0a5ad4573040"
+    },
+    {
+      "file": "product-1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 938709,
+      "total_pixels": 1572516,
+      "sha256": "5aea80666b547d324da1e063ed741ca16793e1c2e3f018bf9a34d42ee754f26f"
+    },
+    {
+      "file": "product-10.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 1230065,
+      "total_pixels": 1572516,
+      "sha256": "f79a4e821940bf397e6acae3c4b2ff012e4a62ee3529722e495888a9ab9087f7"
+    },
+    {
+      "file": "product-11.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 753408,
+      "total_pixels": 1572516,
+      "sha256": "7664174b2c3b456fe403a3f7f77e6285f1d6ab8be33f358644585848992b0551"
+    },
+    {
+      "file": "product-12.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 615111,
+      "total_pixels": 1572516,
+      "sha256": "c5e9c67fd56e30c46663de0cc19c8dcf58182b686dbdc3e659dabb2bc30f1606"
+    },
+    {
+      "file": "product-2.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 923806,
+      "total_pixels": 1572516,
+      "sha256": "1a17fc42600b0c91814653b076f692c2c9510db0c7c7c7a96bb6214936df6cc5"
+    },
+    {
+      "file": "product-3.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 794162,
+      "total_pixels": 1572516,
+      "sha256": "25c7edafe207deef57c74582d313fd99144df523ed41ecb8fff56c1c2c28cc6c"
+    },
+    {
+      "file": "product-4.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 691864,
+      "total_pixels": 1572516,
+      "sha256": "6ce7cbac98463c69ee8ae7bec1c3f7de38f9490321df0f5f054c80574fb3e00b"
+    },
+    {
+      "file": "product-5.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 890869,
+      "total_pixels": 1572516,
+      "sha256": "e46a0b08cea7b01c8f45d01ab9b99d82bef6b1fc700f7adc7679e2b0fecd4fa4"
+    },
+    {
+      "file": "product-6.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 547358,
+      "total_pixels": 1572516,
+      "sha256": "5db6101a3d66fa3a153bf841b4c88c66a943615c24ddb4eb1aafeb5852e38747"
+    },
+    {
+      "file": "product-7.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 1124277,
+      "total_pixels": 1572516,
+      "sha256": "abada74f441431b2b596be24659374835c6792f1a3ef634df4beb229dd1652bb"
+    },
+    {
+      "file": "product-8.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 757846,
+      "total_pixels": 1572516,
+      "sha256": "9610068bf2b1be7358deaf61204dd32ac8f8d2a4c54d485e443facd3442f2e30"
+    },
+    {
+      "file": "product-9.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "fully_transparent_pixels": 833298,
+      "total_pixels": 1572516,
+      "sha256": "909471c8beb4fc6e4339df57ef710cdc9900c6a5c96dac740592b5b13847251d"
+    }
+  ]
+}

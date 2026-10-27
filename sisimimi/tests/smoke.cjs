@@ -35,6 +35,9 @@ async function go(file) {
     const response = await page.goto(base + file);
     assert.equal(response.status(), 200, file + ' phải trả HTTP 200');
     await page.locator('h1').first().waitFor();
+    const bodyText = await page.locator('body').innerText();
+    assert.ok(bodyText.trim().length > 0, 'Trang phải có nội dung hiển thị');
+    assert.doesNotMatch(bodyText, /mèo/i, 'Nội dung chỉ dành cho chó và cún');
 }
 
 async function assertTotal(expected) {
@@ -84,6 +87,12 @@ async function fillContact() {
                     assert.ok(overflow <= 1, 'Trang tràn ngang ' + overflow + 'px');
                     await page.locator('img').evaluateAll(images => images.forEach(image => { image.loading = 'eager'; }));
                     await page.waitForFunction(() => Array.from(document.images).every(image => image.complete && image.naturalWidth > 0));
+                    const expectedProductCards = { 'index.html': 4, 'products.html': 12, 'product-detail.html?id=1': 4 };
+                    if (expectedProductCards[file]) {
+                        const images = await page.locator('.product-card img').evaluateAll(elements => elements.map(element => element.getAttribute('src')));
+                        assert.equal(images.length, expectedProductCards[file], 'Kiểm tra đúng số ảnh sản phẩm, tránh kết quả rỗng');
+                        images.forEach(source => assert.match(source, /^images\/product-\d+\.png$/, 'Mọi thẻ sản phẩm dùng ảnh PNG'));
+                    }
                     const links = await page.locator('a[href]').evaluateAll(links => links.map(link => link.href));
                     links.filter(link => link.startsWith(base)).forEach(link => localLinks.add(link.split('#')[0]));
                     if (file === 'cart.html') assert.equal(await page.locator('.cart-row').count(), 2, 'Kiểm tra responsive với giỏ có dữ liệu');
@@ -104,11 +113,14 @@ async function fillContact() {
             assert.equal(await page.locator('.product-card:visible').count(), 12);
             // Giá và nội dung HTML phải khớp dữ liệu mà giỏ hàng đang dùng.
             const catalogData = await page.evaluate(() => products.map(product => ({ id: product.id, name: product.name, price: product.price, image: product.image })));
+            assert.equal(catalogData.length, 12, 'Phải kiểm tra đủ dữ liệu 12 sản phẩm');
             for (const product of catalogData) {
                 const card = page.locator('#product-grid .product-wrapper[data-id="' + product.id + '"]');
                 assert.equal(await card.locator('h3').innerText(), product.name);
                 assert.ok((await card.locator('.product-price').innerText()).includes(product.price.toLocaleString('vi-VN')));
                 assert.equal(await card.locator('img').getAttribute('src'), product.image);
+                assert.equal(product.image, 'images/product-' + product.id + '.png');
+                assert.match(product.name, /chó|cún/i);
             }
             for (const [category, count] of [['thuc-an', 3], ['do-choi', 2], ['quan-ao', 2], ['phu-kien', 5]]) {
                 await page.locator('.filter-button[data-category="' + category + '"]').click();
@@ -124,9 +136,9 @@ async function fillContact() {
             await page.locator('#search-input').fill('khong-co-san-pham-nay');
             assert.equal(await page.locator('.product-card:visible').count(), 0);
             assert.ok(await page.locator('#no-products').isVisible());
-            await page.locator('#search-input').fill('meo');
+            await page.locator('#search-input').fill('cho');
             await page.locator('.filter-button[data-category="thuc-an"]').click();
-            assert.equal(await page.locator('.product-card:visible').count(), 2);
+            assert.equal(await page.locator('.product-card:visible').count(), 3);
         });
         await check('Danh mục truyền qua URL', 'functional', async () => {
             await go('products.html?category=quan-ao');
@@ -365,7 +377,7 @@ async function fillContact() {
                 await noJsPage.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
                 await noJsPage.goto(base + 'products.html');
                 assert.equal(await noJsPage.locator('#product-grid .product-card:visible').count(), 12);
-                assert.match(await noJsPage.locator('#product-grid').innerText(), /Vòng cổ mèo nơ hồng/);
+                assert.match(await noJsPage.locator('#product-grid').innerText(), /Vòng cổ nơ hồng cho chó/);
                 await noJsPage.goto(base + 'index.html');
                 assert.equal(await noJsPage.locator('#featured-products .product-card:visible').count(), 4);
                 await noJsPage.goto(base + 'news.html');

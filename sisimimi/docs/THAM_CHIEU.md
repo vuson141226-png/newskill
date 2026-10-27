@@ -12,7 +12,7 @@ Bản cập nhật sisimimi này dùng tệp **`S-Chicken (2).zip`** do người
 - Ba tệp JavaScript có nhiệm vụ riêng: `products.js` cho dữ liệu/tên danh mục/định dạng/tìm ID; `cart.js` cho giỏ; `main.js` cho hàm tạo card liên quan, menu, bộ lọc, chi tiết và biểu mẫu.
 - Trang chi tiết có ô số lượng nhập trực tiếp từ 1–99, nút cộng/trừ và tối đa 4 sản phẩm liên quan.
 
-Đây là chuyển thể cửa hàng thú cưng: giữ tên **sisimimi**, slogan, màu hồng pastel, 11 trang, 12 sản phẩm, 4 bài viết và các hình SVG cục bộ. Không chuyển dữ liệu món ăn, màu đỏ/vàng hoặc tên thương hiệu S Chicken thành nội dung cửa hàng thú cưng. Trang `news-detail.html` được giữ để đáp ứng yêu cầu riêng của sisimimi.
+Đây là chuyển thể cửa hàng chỉ dành cho chó và cún con: giữ tên **sisimimi**, slogan, màu hồng pastel, 11 trang, 12 sản phẩm, 4 bài viết và 12 ảnh sản phẩm PNG nền trong suốt cùng minh họa thương hiệu cục bộ về chó/cún. Không chuyển dữ liệu món ăn, màu đỏ/vàng hoặc tên thương hiệu S Chicken thành nội dung cửa hàng thú cưng. Trang `news-detail.html` được giữ để đáp ứng yêu cầu riêng của sisimimi.
 
 ## Những sửa chữa có chủ ý
 
@@ -30,3 +30,7 @@ Các điểm trên mô tả chủ đích triển khai. Kết quả chạy và gi
 ## Khi tự chỉnh sửa
 
 Giữ nhất quán **dữ liệu `products.js` + thẻ `products.html` + thẻ nổi bật `index.html`**. Với bài viết, đồng bộ **nội dung `main.js` + thẻ `news.html` + phần tin tức `index.html`**. Kiểm tra giá giỏ, ID và đường dẫn sau mỗi lần sửa. Nạp ba script theo thứ tự dữ liệu → giỏ → tương tác trang.
+
+## Phạm vi sản phẩm và hình ảnh của bản cập nhật
+
+Danh mục hiện tại chỉ phục vụ chó và cún con: thức ăn, đồ chơi, quần áo và phụ kiện. Bộ ảnh sản phẩm `product-1.png` đến `product-12.png` có nền trong suốt và phong cách chụp sản phẩm. Ảnh được tạo bằng AI để minh họa cho bài tập; không phải ảnh chứng thực hàng bán hoặc cam kết đặc điểm vật lý. Ghi chú nguồn cụ thể nằm trong `images/SOURCES.md`. Banner `hero-dogs.png` là PNG RGBA nền trong suốt về chó/cún. Chỉ còn bốn SVG: `logo.svg` và ba chân dung đội ngũ `team-1.svg`–`team-3.svg`. Các SVG sản phẩm, banner và bài viết cũ không còn là tài nguyên của phiên bản hiện tại.

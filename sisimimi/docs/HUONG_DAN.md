@@ -4,7 +4,7 @@
 
 ## Giai đoạn 1 — Chuẩn bị và hiểu cấu trúc
 
-Mục tiêu của sisimimi là giới thiệu và mô phỏng mua sắm đồ dành cho chó, mèo. Người xem có thể tìm sản phẩm, xem chi tiết, quản lý giỏ và thử các biểu mẫu. Không có đặt hàng thật.
+Mục tiêu của sisimimi là giới thiệu và mô phỏng mua sắm đồ dành cho chó và cún con. Người xem có thể tìm sản phẩm, xem chi tiết, quản lý giỏ và thử các biểu mẫu. Không có đặt hàng thật.
 
 ### 1.1. Tìm đúng thư mục
 
@@ -38,11 +38,11 @@ sisimimi/
 └── README.md
 ```
 
-HTML xác định nội dung và vị trí các khối. CSS quyết định màu, kích thước, khoảng cách và bố cục. JavaScript phản hồi khi người dùng tìm kiếm, bấm nút hoặc gửi biểu mẫu. `images/` chứa các minh họa SVG, cũng là tệp hình ảnh và có thể mở bằng trình duyệt. `fonts/` chứa phông chữ cục bộ và giấy phép nếu được phân phối cùng dự án. `docs/` chứa tài liệu học và bàn giao, không tham gia xử lý giỏ hàng.
+HTML xác định nội dung và vị trí các khối. CSS quyết định màu, kích thước, khoảng cách và bố cục. JavaScript phản hồi khi người dùng tìm kiếm, bấm nút hoặc gửi biểu mẫu. `images/` chứa 12 ảnh sản phẩm PNG nền trong suốt và các hình minh họa thương hiệu. Ảnh sản phẩm có phong cách chụp tách nền, được tạo bằng AI để minh họa cho bài tập; không phải bằng chứng về sản phẩm vật lý hoặc ảnh xác thực từ người bán. Banner `hero-dogs.png` cũng là PNG RGBA nền trong suốt. Bốn SVG còn lại chỉ gồm `logo.svg` và ba chân dung `team-1.svg`–`team-3.svg`; không dùng SVG cho ảnh sản phẩm. Các tệp đều cục bộ và có thể mở bằng trình duyệt. `fonts/` chứa phông chữ cục bộ và giấy phép nếu được phân phối cùng dự án. `docs/` chứa tài liệu học và bàn giao, không tham gia xử lý giỏ hàng.
 
 ### 1.3. Bố cục và bảng màu
 
-Các trang đều dùng: **header → menu → main → footer**. Trang chủ theo bố cục bản ZIP tham chiếu: hero lớn, các dải lợi ích, 4 danh mục, 4 sản phẩm nổi bật, khuyến mãi, câu chuyện thương hiệu, lý do lựa chọn và tin tức. Màu hồng pastel và nội dung thú cưng được giữ thống nhất. Trang sản phẩm dùng lưới; trang chi tiết dùng ảnh và nội dung cạnh nhau trên màn hình rộng; trang thông tin dùng nội dung và biểu mẫu.
+Các trang đều dùng: **header → menu → main → footer**. Trang chủ theo bố cục bản ZIP tham chiếu: hero lớn, các dải lợi ích, 4 danh mục, 4 sản phẩm nổi bật, khuyến mãi, câu chuyện thương hiệu, lý do lựa chọn và tin tức. Màu hồng pastel và nội dung dành cho chó/cún được giữ thống nhất. Trang sản phẩm dùng lưới; trang chi tiết dùng ảnh và nội dung cạnh nhau trên màn hình rộng; trang thông tin dùng nội dung và biểu mẫu.
 
 | Mục đích | Màu |
 |---|---|
@@ -75,6 +75,23 @@ Xem cách ảnh đi cùng đoạn văn, rồi cách các thẻ giá trị và đ
 
 Trang chứa ô tìm kiếm, các nút danh mục và 12 thẻ sản phẩm **viết sẵn trong HTML**. Mỗi thẻ nằm trong một `.product-wrapper`; JavaScript ở `js/main.js` đặt thuộc tính `hidden` để ẩn/hiện thẻ phù hợp từ khóa và danh mục. Bốn thẻ nổi bật cũng có sẵn trong `index.html`. Mảng `products` trong `js/products.js` là nguồn cho chi tiết, card liên quan và tính giá giỏ. Khi đổi tên, giá hoặc ảnh, cập nhật cả mảng này và các thẻ HTML tương ứng; không chỉ sửa chữ trong Inspect.
 
+Danh mục của bản này chỉ dành cho chó và cún con. Dùng bảng dưới để nhận diện đúng ID khi sửa; tên hiển thị đầy đủ lấy theo `products.js` và thẻ HTML tương ứng.
+
+| ID | Sản phẩm | Tệp ảnh |
+|---|---|---|
+| 1 | Vòng cổ nơ hồng cho chó | `images/product-1.png` |
+| 2 | Áo hoodie cho chó | `images/product-2.png` |
+| 3 | Bát ăn hình gấu cho chó | `images/product-3.png` |
+| 4 | Bóng cao su cho chó | `images/product-4.png` |
+| 5 | Giường ngủ êm cho chó | `images/product-5.png` |
+| 6 | Túi vận chuyển chó nhỏ | `images/product-6.png` |
+| 7 | Lược chải lông cho chó | `images/product-7.png` |
+| 8 | Snack thưởng cho chó | `images/product-8.png` |
+| 9 | Hạt dinh dưỡng cho chó | `images/product-9.png` |
+| 10 | Dây thừng gặm cho chó | `images/product-10.png` |
+| 11 | Áo yếm hoa nhí cho chó | `images/product-11.png` |
+| 12 | Pate thịt gà cho chó | `images/product-12.png` |
+
 ### 2.4. Các điểm dễ nhầm
 
 | Khái niệm | Cách hiểu và dùng |
@@ -99,7 +116,7 @@ Trang chi tiết có vùng ảnh, tên, giá, mã, danh mục, mô tả, thuộc
 
 ### 3.2. `news.html`
 
-Đây là danh sách 4 bài viết, các thẻ được viết sẵn trong `news.html`. Mỗi thẻ có ảnh, tên tác giả minh họa, ngày đăng mẫu, tóm tắt và liên kết đọc thêm. Nội dung đầy đủ theo ID nằm trong `js/main.js`; khi sửa tiêu đề, ảnh hoặc tóm tắt, cần sửa cả thẻ HTML và dữ liệu tương ứng. Các thẻ tin tức nổi bật trên trang chủ cũng được cập nhật cùng lúc. Nội dung chăm sóc thú cưng mang tính tham khảo; khi thú cưng có dấu hiệu bệnh cần hỏi bác sĩ thú y.
+Đây là danh sách 4 bài viết, các thẻ được viết sẵn trong `news.html`. Mỗi thẻ có ảnh, tên tác giả minh họa, ngày đăng mẫu, tóm tắt và liên kết đọc thêm. Nội dung đầy đủ theo ID nằm trong `js/main.js`; khi sửa tiêu đề, ảnh hoặc tóm tắt, cần sửa cả thẻ HTML và dữ liệu tương ứng. Các thẻ tin tức nổi bật trên trang chủ cũng được cập nhật cùng lúc. Bốn bài viết tập trung vào chăm sóc chó/cún và mang tính tham khảo; khi chó có dấu hiệu bệnh cần hỏi bác sĩ thú y.
 
 ### 3.3. `news-detail.html`
 
@@ -254,7 +271,7 @@ Mở terminal trong `sisimimi`, chạy `python3 -m http.server 8000` (Windows c�
 
 - **Đổi sản phẩm:** mở mảng `products` trong `js/products.js`; sửa `name`, `price`, `description` và các thuộc tính liên quan. Sau đó sửa thẻ tương ứng trong `products.html`, và trong `index.html` nếu là sản phẩm nổi bật. Giá JavaScript ghi dạng số nguyên, ví dụ `89000`, không ghi chuỗi `"89.000 ₫"`; phần chữ giá trong HTML được định dạng để đọc.
 - **Thêm sản phẩm:** sao chép một object sản phẩm đầy đủ trong mảng, đặt ID mới chưa có, bổ sung tệp ảnh vào `images`, sửa đường dẫn ảnh tương đối. Giữ dấu phẩy giữa các object; bổ sung một `.product-wrapper` có đúng tên/danh mục/ID trong `products.html` để bộ lọc tìm thấy sản phẩm mới. Không đổi ID cũ nếu muốn giỏ đã lưu còn đúng món. Đặt danh mục theo một khóa hiện có: `thuc-an`, `do-choi`, `quan-ao`, `phu-kien`.
-- **Đổi ảnh:** lưu tệp vào `images`, đặt tên đơn giản không dấu, rồi sửa trường ảnh tương ứng trong `products.js` và các `src` ở HTML. SVG, PNG và JPG đều là tệp ảnh hợp lệ. Sửa cả nội dung `alt` nếu ý nghĩa ảnh thay đổi.
+- **Đổi ảnh sản phẩm:** ảnh hiện tại là `images/product-1.png` đến `images/product-12.png`, định dạng PNG có kênh alpha để nền trong suốt. Lưu ảnh thay thế vào `images`, dùng tên đơn giản không dấu; cập nhật đường dẫn trong `products.js` và các `src` ở `products.html`/`index.html`. Muốn giữ hiệu ứng tách nền phải dùng PNG có vùng trong suốt thật; đổi đuôi JPG thành PNG không tự xóa nền. Không chỉnh ảnh sản phẩm như mã SVG. Kiểm tra ảnh trên nền trắng lẫn nền hồng để thấy viền hoặc vùng trắng còn sót. Sửa `alt` khi ý nghĩa ảnh thay đổi; logo và hình thương hiệu SVG được chỉnh riêng nếu cần.
 - **Đổi màu:** sửa biến màu ở đầu `css/style.css`, giữ màu chữ đủ đậm và kiểm tra focus.
 - **Đổi bài viết:** sửa dữ liệu bài viết trong `js/main.js` và các thẻ tương ứng trong `news.html`/`index.html`, giữ ID duy nhất và kiểm tra cả danh sách lẫn chi tiết.
 - **Đổi trang giới thiệu, FAQ, tuyển dụng:** sửa đoạn văn trong tệp HTML tương ứng. Header/footer lặp lại để dễ học; khi đổi thông tin chung phải cập nhật nhất quán cả 11 trang.

@@ -2,11 +2,11 @@
 
 ## Kết quả lần chạy hiện tại
 
-Ngày 27/10/2026, đã chạy bộ kiểm thử `tests/smoke.cjs` bằng Chromium headless qua Playwright trong môi trường Linux. Kết quả **80 lượt đạt, 0 lỗi, 0 bỏ qua**: 55 tổ hợp **11 trang × 5 chiều rộng** (320, 375, 768, 1280, 1920px) và 25 nhóm kiểm tra còn lại. Đây không phải 80 kịch bản nghiệp vụ độc lập. Bằng chứng chi tiết của lần chạy nằm trong [ket-qua-kiem-thu.json](ket-qua-kiem-thu.json).
+Ngày 28/10/2026, đã chạy bộ kiểm thử `tests/smoke.cjs` bằng Chromium headless qua Playwright trong môi trường Linux. Kết quả **80 lượt đạt, 0 lỗi, 0 bỏ qua**: 55 tổ hợp **11 trang × 5 chiều rộng** (320, 375, 768, 1280, 1920px) và 25 nhóm kiểm tra còn lại. Đây không phải 80 kịch bản nghiệp vụ độc lập. Bằng chứng chi tiết của lần chạy nằm trong [ket-qua-kiem-thu.json](ket-qua-kiem-thu.json).
 
 Đã xác minh: title riêng, mỗi trang một `h1`, ảnh tải thành công, không tràn ngang kể cả giỏ có dữ liệu; 29 liên kết cục bộ trả HTTP 200; tìm kiếm có/không dấu, lọc danh mục, chi tiết và ID lạ; ô nhập số lượng và giới hạn 1–99, bốn sản phẩm liên quan ưu tiên cùng danh mục (mỗi lần bấm chỉ thêm một món), lưu giỏ và tổng 337.000 → 496.000 → 318.000 ₫; hủy/xác nhận thanh toán; dữ liệu lưu trữ hỏng; bốn bài viết; FAQ và menu bàn phím; kiểm tra biểu mẫu, CV sai định dạng/quá lớn; giảm chuyển động và biểu mẫu khi tắt JavaScript; 12 thẻ danh sách, 4 thẻ nổi bật và 4 thẻ tin tức vẫn hiện khi tắt JavaScript. Giá, tên và ảnh trong thẻ HTML đã được đối chiếu với dữ liệu dùng để tính giỏ hàng. Không ghi nhận lỗi JavaScript, tài nguyên cục bộ HTTP 4xx/5xx, POST hoặc lưu mật khẩu/thông tin biểu mẫu. Các yêu cầu ngoài đã được chặn để kiểm tra phần cục bộ.
 
-Đã xem ảnh chụp giao diện trang chủ ở 1280/1440px và 320/375px, cùng ảnh trang sản phẩm ở 1280px. Kiểm tra tự động bên trên bao phủ bố cục cả 11 trang ở năm chiều rộng. Không thấy nút bị cắt, ảnh vỡ hay lỗi bố cục cần sửa. Ảnh [trang chủ](giao-dien-trang-chu.png) và [sản phẩm](giao-dien-san-pham.png) được lưu để thuyết trình. Không sử dụng báo cáo S Chicken trong thư mục gốc làm bằng chứng cho sisimimi.
+Đã xem ảnh chụp giao diện trang chủ, danh sách sản phẩm và chi tiết túi vận chuyển ở 1280px và 375px. Đã xem thêm cả 12 ảnh sản phẩm trên nền hồng để phát hiện khung nền thừa hoặc viền tách nền lỗi. Kiểm tra tự động bên trên bao phủ bố cục cả 11 trang ở năm chiều rộng. Không thấy nút bị cắt, ảnh vỡ hay lỗi bố cục cần sửa. Ảnh [trang chủ](giao-dien-trang-chu.png) và [sản phẩm](giao-dien-san-pham.png) được lưu để thuyết trình. Không sử dụng báo cáo S Chicken trong thư mục gốc làm bằng chứng cho sisimimi.
 
 | Môi trường | Trạng thái |
 |---|---|
@@ -17,7 +17,14 @@ Ngày 27/10/2026, đã chạy bộ kiểm thử `tests/smoke.cjs` bằng Chromiu
 | Điện thoại cảm ứng vật lý | Chưa xác minh |
 | Google Maps qua Internet | Chưa xác minh |
 
-Bản kiểm tra này áp dụng cho giao diện và cấu trúc mới dựa trên **S-Chicken (2).zip**, dùng ba tệp `products.js`, `cart.js`, `main.js`. Không dùng kết quả của phiên bản cũ thay thế cho lần chạy hiện tại.
+Bản kiểm tra này áp dụng cho phiên bản **chỉ bán đồ cho chó và cún con**, giữ bố cục tham khảo **S-Chicken (2).zip** và ba tệp `products.js`, `cart.js`, `main.js`. Cả 11 trang và các chi tiết sản phẩm/bài viết được mở trong bộ kiểm tra đều được kiểm tra không còn nội dung về loài khác. 12 thẻ sản phẩm dùng đúng ảnh PNG và dữ liệu tên/giá tương ứng. Không dùng kết quả của phiên bản cũ thay thế cho lần chạy hiện tại.
+
+
+## Kiểm tra ảnh nền trong suốt
+
+Đã kiểm tra riêng **13/13 PNG** (12 sản phẩm và banner hai cún): đều có kênh RGBA, alpha từ 0 đến 255 và trên 15% điểm ảnh hoàn toàn trong suốt. Kết quả kèm kích thước và mã SHA-256 nằm tại [kiem-tra-anh.json](kiem-tra-anh.json). Đây là kiểm tra tệp ảnh độc lập, không cộng vào 80 lượt trình duyệt. Ảnh minh họa được tạo theo phong cách chụp sản phẩm; không phải ảnh hàng thật đã được xác minh.
+
+Ảnh sản phẩm SVG cũ và các hình không còn phù hợp đã được bỏ khỏi gói hiện tại. Font, logo và ba chân dung nhân vật mẫu vẫn lưu cục bộ.
 
 ## Chuẩn bị
 
@@ -82,4 +89,4 @@ Ghi theo mẫu: `Ngày | trình duyệt/phiên bản | mã kịch bản | đạt
 
 ## Giới hạn cần trình bày
 
-Website không có backend, xác thực, email, tải CV hoặc thanh toán thật. Không thể kiểm chứng những luồng thật đó bằng bài tập hiện tại. Bản đồ là dịch vụ bên ngoài và cần Internet. Hình ảnh là minh họa SVG, đánh giá và nhân sự là mẫu. Kiểm thử responsive bằng trình duyệt không thay cho kiểm thử điện thoại vật lý hoặc trình đọc màn hình.
+Website không có backend, xác thực, email, tải CV hoặc thanh toán thật. Không thể kiểm chứng những luồng thật đó bằng bài tập hiện tại. Bản đồ là dịch vụ bên ngoài và cần Internet. Ảnh sản phẩm là minh họa PNG tách nền theo phong cách ảnh chụp; logo và chân dung là SVG. Đánh giá và nhân sự là mẫu. Kiểm thử responsive bằng trình duyệt không thay cho kiểm thử điện thoại vật lý hoặc trình đọc màn hình.

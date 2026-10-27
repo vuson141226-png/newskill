@@ -1,8 +1,8 @@
 # sisimimi — Thế giới nhỏ dành cho bé yêu
 
-Website bài tập nhóm bán đồ dùng, thức ăn, quần áo và phụ kiện cho chó, mèo. Dự án có **11 trang HTML**, dùng **HTML5, CSS3 và JavaScript thuần**, không có framework, công cụ build hoặc cơ sở dữ liệu.
+Website bài tập nhóm bán đồ dùng, thức ăn, quần áo và phụ kiện cho chó và cún con. Dự án có **11 trang HTML**, dùng **HTML5, CSS3 và JavaScript thuần**, không có framework, công cụ build hoặc cơ sở dữ liệu.
 
-Website nằm riêng trong thư mục `sisimimi/` của kho mã; website S Chicken ở thư mục gốc được giữ nguyên. Khi chạy, hãy mở đúng `sisimimi/index.html`. Bản thiết kế này tham chiếu bố cục và cách chia mã của tệp người dùng cung cấp **`S-Chicken(2).zip`**; màu sắc, nội dung và hình minh họa được chuyển sang cửa hàng thú cưng. Xem [ghi chú đối chiếu](docs/THAM_CHIEU.md).
+Website nằm riêng trong thư mục `sisimimi/` của kho mã; website S Chicken ở thư mục gốc được giữ nguyên. Khi chạy, hãy mở đúng `sisimimi/index.html`. Bản thiết kế này tham chiếu bố cục và cách chia mã của tệp người dùng cung cấp **`S-Chicken(2).zip`**; màu sắc, nội dung và hình minh họa được chuyển sang cửa hàng dành riêng cho chó và cún con. Xem [ghi chú đối chiếu](docs/THAM_CHIEU.md).
 
 ## Mở trên máy tính
 
@@ -41,7 +41,7 @@ Trên Windows, có thể dùng `py -m http.server 8000`. Dùng địa chỉ máy
 | `js/products.js` | Dữ liệu 12 sản phẩm, tên danh mục, định dạng tiền và tìm sản phẩm |
 | `js/cart.js` | Đọc/lưu giỏ dùng chung, số lượng và tổng tiền |
 | `js/main.js` | Card liên quan, bộ lọc, chi tiết, menu, biểu mẫu và bài viết |
-| `images/` | Minh họa SVG cục bộ; xem `images/SOURCES.md` |
+| `images/` | Ảnh sản phẩm PNG nền trong suốt và minh họa thương hiệu cục bộ; xem `images/SOURCES.md` |
 | `docs/` | Hướng dẫn, báo cáo và bảng phân công |
 
 Danh sách sản phẩm, sản phẩm nổi bật và danh sách tin tức được viết sẵn trong HTML để dễ đọc và giữ nội dung khi tắt JavaScript. Bộ lọc chỉ ẩn/hiện các `.product-wrapper`. Khi đổi tên, giá hoặc ảnh, cập nhật **cả dữ liệu trong `products.js` lẫn các thẻ HTML tương ứng**. Nội dung chi tiết và giá tính giỏ lấy từ dữ liệu JavaScript dùng chung.
@@ -81,7 +81,7 @@ Kết quả được ghi tại `docs/ket-qua-kiem-thu.json`; lệnh trả trạn
 
 Giỏ hàng chỉ lưu ID và số lượng trong `localStorage`. Không lưu mật khẩu, dữ liệu biểu mẫu hay CV. Đăng nhập, đăng ký, liên hệ, ứng tuyển và xác nhận đơn hàng là mô phỏng tại trình duyệt; không gửi email, tạo tài khoản, tải CV hoặc thu tiền. Khuyến mãi, đánh giá, thông tin cửa hàng và nhân sự là dữ liệu minh họa.
 
-Google Maps cần mạng và có thể bị chặn trong một số môi trường. Các hình minh họa của cửa hàng được lưu cục bộ. Không suy diễn kết quả Chromium thành kết quả của Chrome, Edge hoặc Firefox bản cài riêng; xem báo cáo kiểm thử.
+Google Maps cần mạng và có thể bị chặn trong một số môi trường. 12 ảnh sản phẩm PNG nền trong suốt được tạo bằng AI theo phong cách chụp sản phẩm và lưu cục bộ. Chúng chỉ là ảnh minh họa, không xác nhận hàng vật lý hoặc nguồn cung từ người bán. Banner `hero-dogs.png` cũng là PNG RGBA nền trong suốt. Bốn SVG còn lại là `logo.svg` và ba chân dung đội ngũ `team-1.svg`–`team-3.svg`; không dùng SVG cho ảnh sản phẩm. Không suy diễn kết quả Chromium thành kết quả của Chrome, Edge hoặc Firefox bản cài riêng; xem báo cáo kiểm thử.
 
 ## Đóng gói để nộp
 

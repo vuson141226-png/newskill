@@ -231,26 +231,98 @@ document.querySelectorAll('[data-job]').forEach(function (button) {
 // PHẦN 10. BÀI VIẾT VÀ TRANG CHI TIẾT
 // Nội dung kiến thức tham khảo, không thay thế lời khuyên của bác sĩ thú y.
 const articles = [
-    { id: 1, title: 'Cách chăm sóc mèo con mới về nhà', category: 'Chăm sóc mèo', author: 'Mai An', date: '20/10/2026', image: 'images/news-1.svg', intro: 'Một góc nhỏ yên tĩnh, chiếc bát quen và thật nhiều kiên nhẫn: bắt đầu tình bạn mới theo cách nhẹ nhàng.', sections: [
-        { heading: 'Chuẩn bị một góc an toàn', text: 'Chọn căn phòng yên tĩnh, đóng cửa sổ và cất dây điện, cây độc, hóa chất. Đặt giường, khay vệ sinh và chỗ ăn riêng; để bát ăn cách xa khay vệ sinh. Một chiếc hộp giấy sạch cũng giúp bé có nơi ẩn nấp khi còn bỡ ngỡ.' },
-        { heading: 'Làm quen theo nhịp của bé', text: 'Để mèo tự bước ra khỏi túi vận chuyển. Không kéo bé ra hoặc bế liên tục. Ngồi thấp, nói nhỏ và cho bé thời gian khám phá. Khi nhà có thú cưng khác, cần giới thiệu từ từ và giám sát, không để hai bé gặp nhau ngay lập tức.' },
-        { heading: 'Ăn uống và kiểm tra sức khỏe', text: 'Hỏi người chăm trước về loại thức ăn đang dùng, chuyển thức ăn mới từ từ. Luôn có nước sạch; không tự cho uống sữa bò hoặc thuốc của người. Đặt lịch khám thú y để được hướng dẫn lịch tiêm và tẩy ký sinh trùng. Nếu bé bỏ ăn, nôn, tiêu chảy hoặc lờ đờ, liên hệ bác sĩ.' }
-    ] },
-    { id: 2, title: 'Những món đồ chơi giúp chó vận động', category: 'Chơi cùng bé', author: 'Minh Thư', date: '18/10/2026', image: 'images/news-2.svg', intro: 'Biến thời gian chơi thành những khoảnh khắc kết nối, với đồ chơi vừa kích thước và mức năng lượng của bé.', sections: [
-        { heading: 'Chọn đồ chơi vừa miệng', text: 'Đồ chơi cần đủ lớn để chó không nuốt được, nhưng không quá cứng gây tổn thương răng. Kiểm tra đường may và mảnh nhỏ trước mỗi buổi chơi. Bỏ đồ chơi bị rách hoặc bong ra. Không để bé chơi một mình với dây dài hay đồ có chi tiết dễ rời.' },
-        { heading: 'Thay đổi trò chơi mỗi ngày', text: 'Có thể xen kẽ ném nhặt bóng ở khu vực an toàn, tìm phần thưởng hoặc kéo co nhẹ. Bắt đầu ngắn, quan sát nhịp thở và cho bé nghỉ. Chó con, chó lớn tuổi và các giống mũi ngắn cần hoạt động phù hợp, đặc biệt tránh thời tiết nóng.' },
-        { heading: 'Chơi để hiểu nhau hơn', text: 'Dùng lời khen và phần thưởng nhỏ khi bé làm đúng. Không giật mạnh hoặc ép chơi khi bé lảng tránh. Dọn và vệ sinh đồ chơi theo hướng dẫn. Nếu chưa biết mức vận động thích hợp, hỏi bác sĩ thú y theo tuổi và tình trạng sức khỏe của bé.' }
-    ] },
-    { id: 3, title: 'Bí quyết chọn thức ăn cho mèo', category: 'Dinh dưỡng', author: 'Khánh Linh', date: '15/10/2026', image: 'images/news-3.svg', intro: 'Đọc nhãn, chọn theo giai đoạn sống và thay đổi từ từ để mỗi bữa ăn của mèo luôn phù hợp.', sections: [
-        { heading: 'Đọc nhãn trước khi mua', text: 'Chọn thức ăn ghi rõ dành cho mèo và phù hợp giai đoạn sống. Phân biệt thức ăn hoàn chỉnh với thức ăn bổ sung; snack và pate bổ sung không tự động thay thế bữa chính. Kiểm tra hạn dùng, bao bì nguyên vẹn và hướng dẫn bảo quản.' },
-        { heading: 'Thay đổi từ từ và quan sát', text: 'Trộn một phần nhỏ thức ăn mới với thức ăn quen, rồi tăng dần theo hướng dẫn và khả năng dung nạp của bé. Theo dõi phân, da lông và mức ăn uống. Không thay nhiều loại cùng lúc. Nếu xuất hiện dấu hiệu bất thường, ngừng thử và trao đổi với bác sĩ thú y.' },
-        { heading: 'Nước sạch luôn cần thiết', text: 'Đặt nước sạch ở nơi yên tĩnh và thay hằng ngày. Đong khẩu phần thay vì đổ đầy liên tục; tính cả phần thưởng trong tổng lượng ăn. Mèo có bệnh thận, tiết niệu, dị ứng hoặc nhu cầu đặc biệt cần chế độ do bác sĩ tư vấn, không tự áp dụng theo bài viết.' }
-    ] },
-    { id: 4, title: 'Cách giữ vệ sinh cho thú cưng', category: 'Góc chăm sóc', author: 'Mai An', date: '12/10/2026', image: 'images/news-4.svg', intro: 'Một vài thói quen nhỏ giúp góc sống của bé sạch sẽ hơn mà vẫn giữ được sự thoải mái và an toàn.', sections: [
-        { heading: 'Chải lông nhẹ nhàng', text: 'Dùng lược phù hợp loại lông, chải từng vùng nhỏ và không kéo rối mạnh. Khen bé khi hợp tác, dừng nếu bé căng thẳng. Không tự cắt sát búi rối bằng kéo. Khi da có vết đỏ, ngứa hoặc rụng lông bất thường, đưa bé đi kiểm tra.' },
-        { heading: 'Giữ sạch đồ dùng', text: 'Rửa bát ăn và thay nước mỗi ngày. Dọn khay vệ sinh đều đặn, giặt đệm và đồ vải theo nhãn. Tráng kỹ chất tẩy và để khô trước khi dùng lại. Cất hóa chất xa bé; không trộn các chất tẩy rửa và không dùng sản phẩm có hương mạnh tùy tiện.' },
-        { heading: 'Tắm và chăm sóc đúng cách', text: 'Chỉ dùng sản phẩm phù hợp loài và hỏi bác sĩ về tần suất tắm khi cần. Tránh để nước vào tai, lau khô nhẹ nhàng và không sấy quá nóng. Không tự nhỏ thuốc tai, mắt hoặc dùng thuốc trị ve của chó cho mèo. Chăm sóc đều đặn luôn đi cùng quan sát sức khỏe.' }
-    ] }
+    {
+        "id": 1,
+        "title": "Cách chăm sóc cún con mới về nhà",
+        "category": "Chăm sóc cún con",
+        "author": "Mai An",
+        "date": "20/10/2026",
+        "image": "images/hero-dogs.png",
+        "intro": "Một góc nghỉ yên tĩnh, chiếc bát quen và thật nhiều kiên nhẫn giúp cún bắt đầu làm quen với ngôi nhà mới.",
+        "sections": [
+            {
+                "heading": "Chuẩn bị góc nhỏ an toàn",
+                "text": "Cất dây điện, hóa chất, thuốc và đồ nhỏ dễ nuốt; kiểm tra cửa ra vào và ban công. Đặt chỗ ngủ sạch, bát nước và khu vực vệ sinh dễ tiếp cận. Chọn nơi yên tĩnh để cún có thể nghỉ, không bị làm phiền khi ngủ."
+            },
+            {
+                "heading": "Làm quen từng chút một",
+                "text": "Để cún tự ngửi và khám phá một khu vực nhỏ, tránh đón quá đông người cùng lúc. Giữ lịch ăn, nghỉ và đi vệ sinh đều đặn; khen khi bé làm đúng, không phạt vì sự cố vệ sinh. Nếu nhà có chó khác, giới thiệu từ từ ở nơi phù hợp và luôn giám sát."
+            },
+            {
+                "heading": "Hẹn khám và chăm sóc hằng ngày",
+                "text": "Hỏi người chăm trước về thức ăn đang dùng, chuyển loại mới từ từ và luôn có nước sạch. Đặt lịch khám để bác sĩ hướng dẫn tiêm phòng, phòng ký sinh trùng và thời điểm ra ngoài phù hợp. Không tự dùng thuốc của người. Cún bỏ ăn, lờ đờ, nôn hoặc tiêu chảy cần được hỏi bác sĩ sớm, nhất là khi còn nhỏ."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Những món đồ chơi giúp chó vận động",
+        "category": "Chơi cùng chó",
+        "author": "Minh Thư",
+        "date": "18/10/2026",
+        "image": "images/product-4.png",
+        "intro": "Bóng, dây thừng và trò tìm phần thưởng biến giờ chơi của cún thành những khoảnh khắc kết nối có giám sát.",
+        "sections": [
+            {
+                "heading": "Chọn đồ chơi theo kích thước của cún",
+                "text": "Bóng và đồ gặm phải đủ lớn để chó không nuốt được. Tránh đồ quá cứng hoặc có chi tiết nhỏ dễ rời; kiểm tra vết nứt, dây tưa trước mỗi lần chơi. Đồ chơi hỏng cần được cất bỏ, không để bé tiếp tục nhai hoặc nuốt mảnh vụn."
+            },
+            {
+                "heading": "Chơi vừa sức và nghỉ đúng lúc",
+                "text": "Có thể xen kẽ ném nhặt bóng ở khu vực an toàn, tìm phần thưởng hoặc kéo co nhẹ. Bắt đầu với buổi ngắn, luôn có nước và chỗ nghỉ. Chó con, chó lớn tuổi, chó mũi ngắn hoặc đang có bệnh cần mức vận động phù hợp; tránh trời nóng và hỏi bác sĩ khi chưa chắc."
+            },
+            {
+                "heading": "Cùng chơi, không ép chơi",
+                "text": "Khen và thưởng một phần nhỏ khi cún hợp tác. Không giật mạnh dây hoặc kéo cún lên khỏi mặt đất; dừng khi bé mệt, căng thẳng hay quay đi. Cất dây thừng sau giờ chơi, vệ sinh đồ chơi theo hướng dẫn và giám sát để bé không nuốt sợi hoặc mảnh nhỏ."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Bí quyết chọn thức ăn cho chó",
+        "category": "Dinh dưỡng cho chó",
+        "author": "Khánh Linh",
+        "date": "15/10/2026",
+        "image": "images/product-9.png",
+        "intro": "Chọn thức ăn theo tuổi, kích thước và nhu cầu của cún; đọc nhãn và đổi bữa từ từ thay vì chỉ nhìn bao bì.",
+        "sections": [
+            {
+                "heading": "Đọc nhãn và chọn đúng giai đoạn sống",
+                "text": "Tìm loại ghi rõ dành cho chó và phù hợp tuổi của bé. Cún con, chó trưởng thành và chó có nhu cầu riêng không nhất thiết dùng cùng một khẩu phần. Phân biệt thức ăn hoàn chỉnh với thức ăn bổ sung; snack hoặc pate bổ sung không tự thay thế bữa chính. Kiểm tra hạn dùng và bao bì nguyên vẹn."
+            },
+            {
+                "heading": "Đổi thức ăn từ từ và đo khẩu phần",
+                "text": "Trộn lượng nhỏ thức ăn mới vào thức ăn quen rồi tăng dần theo hướng dẫn và khả năng dung nạp của cún. Theo dõi phân, mức ăn uống và da lông; không đổi nhiều loại cùng lúc. Đong khẩu phần, tính cả đồ thưởng trong lượng ăn mỗi ngày và luôn có nước sạch."
+            },
+            {
+                "heading": "Khi nào cần hỏi bác sĩ?",
+                "text": "Chó có bệnh nền, dị ứng, thừa cân hoặc đang điều trị cần chế độ do bác sĩ tư vấn. Không tự chọn chế độ chữa bệnh theo bài viết. Nếu bé bỏ ăn, nôn, tiêu chảy kéo dài hoặc có dấu hiệu bất thường, liên hệ bác sĩ. Không cho cún ăn chocolate, nho, hành tỏi, sản phẩm chứa xylitol hoặc xương đã nấu chín."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Cách giữ vệ sinh cho chó và cún",
+        "category": "Vệ sinh cho cún",
+        "author": "Mai An",
+        "date": "12/10/2026",
+        "image": "images/product-7.png",
+        "intro": "Chải lông nhẹ nhàng, giữ sạch bát và chỗ ngủ giúp cún có góc sống dễ chịu hơn mỗi ngày.",
+        "sections": [
+            {
+                "heading": "Chải lông và quan sát da",
+                "text": "Chọn lược phù hợp loại lông của chó, chải từng vùng nhỏ theo chiều lông và không giật búi rối. Khen cún khi hợp tác, dừng nếu bé khó chịu. Không tự cắt sát da bằng kéo; vùng da đỏ, ngứa, rụng lông bất thường hoặc vết thương cần được bác sĩ kiểm tra."
+            },
+            {
+                "heading": "Giữ sạch đồ dùng và không gian",
+                "text": "Rửa bát ăn, thay nước mỗi ngày và giặt đệm theo nhãn chăm sóc. Dọn chất thải, tráng kỹ chất tẩy và để đồ dùng khô trước khi cho cún dùng lại. Cất hóa chất ngoài tầm với, không trộn các chất tẩy rửa và giữ cún tránh xa khu vực đang vệ sinh."
+            },
+            {
+                "heading": "Tắm và chăm sóc đúng cách",
+                "text": "Dùng sản phẩm dành cho chó phù hợp tuổi và tình trạng da; hỏi bác sĩ về tần suất tắm nếu cần. Tránh nước vào tai, lau khô nhẹ và không sấy quá nóng. Không tự nhỏ thuốc tai, mắt hoặc dùng thuốc trị ký sinh trùng tùy tiện. Cho cún làm quen dần với chăm sóc răng, móng theo hướng dẫn chuyên môn."
+            }
+        ]
+    }
 ];
 
 // Danh sách tin tức được viết sẵn trong news.html; hàm này dùng khi chuẩn bị HTML.
