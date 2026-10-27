@@ -29,7 +29,9 @@ sisimimi/
 ├── cart.html
 ├── careers.html
 ├── css/style.css
-├── js/script.js
+├── js/products.js
+├── js/cart.js
+├── js/main.js
 ├── images/
 ├── fonts/
 ├── docs/
@@ -40,7 +42,7 @@ HTML xác định nội dung và vị trí các khối. CSS quyết định màu
 
 ### 1.3. Bố cục và bảng màu
 
-Các trang đều dùng: **header → menu → main → footer**. Trang chủ có banner, 4 danh mục, sản phẩm nổi bật, khuyến mãi và giới thiệu ngắn. Trang sản phẩm dùng lưới; trang chi tiết dùng ảnh và nội dung cạnh nhau trên màn hình rộng; trang thông tin dùng nội dung và biểu mẫu.
+Các trang đều dùng: **header → menu → main → footer**. Trang chủ theo bố cục bản ZIP tham chiếu: hero lớn, các dải lợi ích, 4 danh mục, 4 sản phẩm nổi bật, khuyến mãi, câu chuyện thương hiệu, lý do lựa chọn và tin tức. Màu hồng pastel và nội dung thú cưng được giữ thống nhất. Trang sản phẩm dùng lưới; trang chi tiết dùng ảnh và nội dung cạnh nhau trên màn hình rộng; trang thông tin dùng nội dung và biểu mẫu.
 
 | Mục đích | Màu |
 |---|---|
@@ -50,6 +52,8 @@ Các trang đều dùng: **header → menu → main → footer**. Trang chủ c�
 | Trắng hồng | `#FFF8FB` |
 | Kem | `#FFF1E6` |
 | Chữ | `#49343D` |
+
+Bản bố cục tham chiếu là tệp **`S-Chicken(2).zip`** do người dùng cung cấp. Chỉ dùng cách tổ chức và bố cục làm mẫu; không đổi thương hiệu sisimimi thành S Chicken và không giữ dữ liệu gà rán. [Ghi chú tham chiếu](THAM_CHIEU.md) giải thích điểm giữ lại và những lỗi không sao chép.
 
 **Tự kiểm tra:** đếm 11 tệp HTML ở gốc `sisimimi`, mở `index.html` và nhận diện header, main, footer. Không tính 11 phần trong một trang là 11 trang.
 
@@ -69,7 +73,7 @@ Xem cách ảnh đi cùng đoạn văn, rồi cách các thẻ giá trị và đ
 
 ### 2.3. Đọc `products.html`
 
-Trang chứa ô tìm kiếm, các nút danh mục và vùng danh sách sản phẩm. JavaScript lấy dữ liệu từ mảng `products` trong `js/script.js` để tạo các card. Vì vậy, muốn đổi tên hoặc giá, sửa nguồn dữ liệu này thay vì sửa chữ đang hiển thị trong công cụ Inspect.
+Trang chứa ô tìm kiếm, các nút danh mục và 12 thẻ sản phẩm **viết sẵn trong HTML**. Mỗi thẻ nằm trong một `.product-wrapper`; JavaScript ở `js/main.js` đặt thuộc tính `hidden` để ẩn/hiện thẻ phù hợp từ khóa và danh mục. Bốn thẻ nổi bật cũng có sẵn trong `index.html`. Mảng `products` trong `js/products.js` là nguồn cho chi tiết, card liên quan và tính giá giỏ. Khi đổi tên, giá hoặc ảnh, cập nhật cả mảng này và các thẻ HTML tương ứng; không chỉ sửa chữ trong Inspect.
 
 ### 2.4. Các điểm dễ nhầm
 
@@ -91,11 +95,11 @@ Trang chứa ô tìm kiếm, các nút danh mục và vùng danh sách sản ph�
 
 Ví dụ liên kết `product-detail.html?id=1` gồm tên tệp và phần truy vấn `?id=1`. `URLSearchParams` trong JavaScript đọc giá trị `id`, đổi thành số rồi tìm sản phẩm có ID tương ứng trong mảng. Thay số `1` bằng `2` phải hiển thị sản phẩm khác. ID không tồn tại phải hiện thông báo thay vì làm trang lỗi.
 
-Trang chi tiết có vùng ảnh, tên, giá, mã, danh mục, mô tả, thuộc tính và đánh giá mẫu. Nút cộng/trừ điều chỉnh số lượng trước khi thêm giỏ; giới hạn 1–99 giúp tránh số không hợp lệ. Nút tư vấn liên kết sang `contact.html`.
+Trang chi tiết có vùng ảnh, tên, giá, mã, danh mục, mô tả, thuộc tính và đánh giá mẫu. Ô số lượng `type="number"` nhận số từ 1–99; người xem có thể nhập trực tiếp hoặc dùng nút cộng/trừ trước khi thêm giỏ. Có tối đa 4 sản phẩm liên quan bên dưới. Giới hạn và kiểm tra số nguyên giúp tránh số không hợp lệ. Nút tư vấn liên kết sang `contact.html`.
 
 ### 3.2. `news.html`
 
-Đây là danh sách bài viết. Mỗi thẻ có ảnh, tên tác giả minh họa, ngày đăng mẫu, tóm tắt và liên kết đọc thêm. Dữ liệu bài viết nằm cùng `js/script.js`. Nội dung chăm sóc thú cưng mang tính tham khảo; khi thú cưng có dấu hiệu bệnh cần hỏi bác sĩ thú y.
+Đây là danh sách 4 bài viết, các thẻ được viết sẵn trong `news.html`. Mỗi thẻ có ảnh, tên tác giả minh họa, ngày đăng mẫu, tóm tắt và liên kết đọc thêm. Nội dung đầy đủ theo ID nằm trong `js/main.js`; khi sửa tiêu đề, ảnh hoặc tóm tắt, cần sửa cả thẻ HTML và dữ liệu tương ứng. Các thẻ tin tức nổi bật trên trang chủ cũng được cập nhật cùng lúc. Nội dung chăm sóc thú cưng mang tính tham khảo; khi thú cưng có dấu hiệu bệnh cần hỏi bác sĩ thú y.
 
 ### 3.3. `news-detail.html`
 
@@ -171,7 +175,7 @@ Lưới sản phẩm chuyển từ 4 cột ở màn hình lớn sang 2 hoặc 1 
 
 ## Giai đoạn 7 — Hiểu JavaScript theo chức năng
 
-Mở `js/script.js`. Các phần dữ liệu và hàm được chú thích bằng tiếng Việt. Trình duyệt chạy tệp này trực tiếp; không dùng Node.js để phục vụ cửa hàng.
+Đọc lần lượt **`js/products.js` → `js/cart.js` → `js/main.js`**. `products.js` khai báo dữ liệu sản phẩm, tên danh mục, hàm định dạng tiền và hàm tìm sản phẩm theo ID. `cart.js` quản lý giỏ và kiểm tra dữ liệu lưu. `main.js` chứa hàm tạo card liên quan và xử lý bộ lọc, chi tiết, menu, biểu mẫu và chi tiết tin tức. Các tệp được chú thích bằng tiếng Việt và chạy trực tiếp trong trình duyệt; không dùng Node.js để phục vụ cửa hàng.
 
 | Khái niệm | Cách hiểu trong dự án |
 |---|---|
@@ -197,7 +201,7 @@ Mở `js/script.js`. Các phần dữ liệu và hàm được chú thích bằn
 | `JSON.stringify()` | Đổi mảng/object thành chuỗi để lưu |
 | `JSON.parse()` | Đổi chuỗi JSON trở lại dữ liệu; cần bắt lỗi khi chuỗi bị hỏng |
 
-Luồng sản phẩm: **dữ liệu → tìm/lọc → card → URL ID → chi tiết → giỏ**. Luồng giỏ: **đọc dữ liệu → kiểm tra ID/số lượng → thao tác → tính tổng → lưu → cập nhật giao diện**. Với biểu mẫu: **chặn gửi mặc định → kiểm tra → hiện lỗi hoặc thông báo mô phỏng**.
+Luồng danh sách: **card HTML có sẵn → từ khóa/danh mục → ẩn/hiện product-wrapper → URL ID**. Luồng chi tiết: **ID → mảng products → nội dung chi tiết và card liên quan → giỏ**. Luồng giỏ: **đọc dữ liệu → kiểm tra ID/số lượng → thao tác → tính tổng → lưu → cập nhật giao diện**. Với biểu mẫu: **chặn gửi mặc định → kiểm tra → hiện lỗi hoặc thông báo mô phỏng**.
 
 Các vùng chỉ có trên một số trang phải được kiểm tra tồn tại trước khi dùng. Ví dụ, trang giới thiệu không có ô tìm kiếm; script chung không được báo lỗi vì thiếu ô đó. Lưu trữ có thể bị chặn hoặc chứa JSON hỏng, nên cần `try/catch` và kiểm tra dữ liệu. Không sửa mã để bỏ qua lỗi bằng cách tắt kiểm tra.
 
@@ -216,7 +220,7 @@ Xem [KIEM_THU.md](KIEM_THU.md) để chạy từng kịch bản. Báo cáo của
 7. Dùng bàn phím mở menu, FAQ và đóng hộp thoại bằng Escape.
 8. Tắt Internet và kiểm tra các tệp cục bộ; bản đồ ngoài được phép không tải.
 
-Nếu CSS không chạy: kiểm tra tên `css/style.css`, vị trí thư mục, chữ hoa/thường và tab Network. Nếu JavaScript không chạy: kiểm tra `js/script.js`, thuộc tính `defer`, Console và việc đã bật JavaScript trong trình duyệt. Sau khi sửa, dùng tải lại mạnh để tránh giữ bộ nhớ đệm cũ.
+Nếu CSS không chạy: kiểm tra tên `css/style.css`, vị trí thư mục, chữ hoa/thường và tab Network. Nếu JavaScript không chạy: kiểm tra ba đường dẫn `js/products.js`, `js/cart.js`, `js/main.js`, đúng thứ tự, thuộc tính `defer`, Console và việc đã bật JavaScript trong trình duyệt. Sau khi sửa, dùng tải lại mạnh để tránh giữ bộ nhớ đệm cũ.
 
 ## Giai đoạn 9 — Chạy, chỉnh sửa và đóng gói
 
@@ -231,10 +235,12 @@ Trong các tệp HTML ở gốc `sisimimi`, liên kết CSS bằng:
 Liên kết JavaScript bằng:
 
 ```html
-<script src="js/script.js" defer></script>
+<script src="js/products.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/main.js" defer></script>
 ```
 
-`href` chỉ địa chỉ tài nguyên được liên kết, `src` chỉ nguồn tệp cần nạp. `defer` tải script cùng lúc với HTML nhưng chỉ chạy sau khi trình duyệt phân tích xong tài liệu; nhờ vậy script tìm được các phần tử. Không đổi tệp HTML sang thư mục khác mà quên cập nhật đường dẫn.
+`href` chỉ địa chỉ tài nguyên được liên kết, `src` chỉ nguồn tệp cần nạp. `defer` tải script cùng lúc với HTML nhưng chỉ chạy sau khi trình duyệt phân tích xong tài liệu; nhờ vậy script tìm được các phần tử. Ba script dùng `defer` theo đúng thứ tự: dữ liệu phải có trước khi giỏ và chi tiết sử dụng. Không đổi tệp HTML sang thư mục khác mà quên cập nhật đường dẫn.
 
 ### 9.2. Chạy bằng Live Server
 
@@ -246,11 +252,11 @@ Mở terminal trong `sisimimi`, chạy `python3 -m http.server 8000` (Windows c�
 
 ### 9.4. Đổi nội dung
 
-- **Đổi sản phẩm:** mở mảng `products` trong `js/script.js`; sửa `name`, `price`, `description` và các thuộc tính liên quan. Giá ghi dạng số nguyên, ví dụ `89000`, không ghi chuỗi `"89.000 ₫"`.
-- **Thêm sản phẩm:** sao chép một object sản phẩm đầy đủ trong mảng, đặt ID mới chưa có, bổ sung tệp ảnh vào `images`, sửa đường dẫn ảnh tương đối. Giữ dấu phẩy giữa các object. Đặt danh mục theo một khóa hiện có: `thuc-an`, `do-choi`, `quan-ao`, `phu-kien`.
-- **Đổi ảnh:** lưu tệp vào `images`, đặt tên đơn giản không dấu, rồi sửa trường ảnh tương ứng. SVG, PNG và JPG đều là tệp ảnh hợp lệ. Sửa cả nội dung `alt` nếu ý nghĩa ảnh thay đổi.
+- **Đổi sản phẩm:** mở mảng `products` trong `js/products.js`; sửa `name`, `price`, `description` và các thuộc tính liên quan. Sau đó sửa thẻ tương ứng trong `products.html`, và trong `index.html` nếu là sản phẩm nổi bật. Giá JavaScript ghi dạng số nguyên, ví dụ `89000`, không ghi chuỗi `"89.000 ₫"`; phần chữ giá trong HTML được định dạng để đọc.
+- **Thêm sản phẩm:** sao chép một object sản phẩm đầy đủ trong mảng, đặt ID mới chưa có, bổ sung tệp ảnh vào `images`, sửa đường dẫn ảnh tương đối. Giữ dấu phẩy giữa các object; bổ sung một `.product-wrapper` có đúng tên/danh mục/ID trong `products.html` để bộ lọc tìm thấy sản phẩm mới. Không đổi ID cũ nếu muốn giỏ đã lưu còn đúng món. Đặt danh mục theo một khóa hiện có: `thuc-an`, `do-choi`, `quan-ao`, `phu-kien`.
+- **Đổi ảnh:** lưu tệp vào `images`, đặt tên đơn giản không dấu, rồi sửa trường ảnh tương ứng trong `products.js` và các `src` ở HTML. SVG, PNG và JPG đều là tệp ảnh hợp lệ. Sửa cả nội dung `alt` nếu ý nghĩa ảnh thay đổi.
 - **Đổi màu:** sửa biến màu ở đầu `css/style.css`, giữ màu chữ đủ đậm và kiểm tra focus.
-- **Đổi bài viết:** sửa danh sách bài viết trong `js/script.js`, giữ ID duy nhất và kiểm tra cả danh sách lẫn chi tiết.
+- **Đổi bài viết:** sửa dữ liệu bài viết trong `js/main.js` và các thẻ tương ứng trong `news.html`/`index.html`, giữ ID duy nhất và kiểm tra cả danh sách lẫn chi tiết.
 - **Đổi trang giới thiệu, FAQ, tuyển dụng:** sửa đoạn văn trong tệp HTML tương ứng. Header/footer lặp lại để dễ học; khi đổi thông tin chung phải cập nhật nhất quán cả 11 trang.
 
 ### 9.5. Chuẩn bị bài nộp

@@ -2,20 +2,22 @@
 
 ## Kết quả lần chạy hiện tại
 
-Ngày 26/10/2026, đã chạy bộ kiểm thử `tests/smoke.cjs` bằng Chromium headless qua Playwright trong môi trường Linux. Kết quả **78 lượt đạt, 0 lỗi, 0 bỏ qua**: 55 tổ hợp **11 trang × 5 chiều rộng** (320, 375, 768, 1280, 1920px) và 23 nhóm kiểm tra còn lại. Đây không phải 78 kịch bản nghiệp vụ độc lập. Bằng chứng chi tiết của lần chạy nằm trong [ket-qua-kiem-thu.json](ket-qua-kiem-thu.json).
+Ngày 27/10/2026, đã chạy bộ kiểm thử `tests/smoke.cjs` bằng Chromium headless qua Playwright trong môi trường Linux. Kết quả **80 lượt đạt, 0 lỗi, 0 bỏ qua**: 55 tổ hợp **11 trang × 5 chiều rộng** (320, 375, 768, 1280, 1920px) và 25 nhóm kiểm tra còn lại. Đây không phải 80 kịch bản nghiệp vụ độc lập. Bằng chứng chi tiết của lần chạy nằm trong [ket-qua-kiem-thu.json](ket-qua-kiem-thu.json).
 
-Đã xác minh: title riêng, mỗi trang một `h1`, ảnh tải thành công, không tràn ngang kể cả giỏ có dữ liệu; 29 liên kết cục bộ trả HTTP 200; tìm kiếm có/không dấu, lọc danh mục, chi tiết và ID lạ; giới hạn số lượng, lưu giỏ và tổng 337.000 → 496.000 → 318.000 ₫; hủy/xác nhận thanh toán; dữ liệu lưu trữ hỏng; bốn bài viết; FAQ và menu bàn phím; kiểm tra biểu mẫu, CV sai định dạng/quá lớn; giảm chuyển động và biểu mẫu khi tắt JavaScript. Không ghi nhận lỗi JavaScript, tài nguyên cục bộ HTTP 4xx/5xx, POST hoặc lưu mật khẩu/thông tin biểu mẫu. Các yêu cầu ngoài đã được chặn để kiểm tra phần cục bộ.
+Đã xác minh: title riêng, mỗi trang một `h1`, ảnh tải thành công, không tràn ngang kể cả giỏ có dữ liệu; 29 liên kết cục bộ trả HTTP 200; tìm kiếm có/không dấu, lọc danh mục, chi tiết và ID lạ; ô nhập số lượng và giới hạn 1–99, bốn sản phẩm liên quan ưu tiên cùng danh mục (mỗi lần bấm chỉ thêm một món), lưu giỏ và tổng 337.000 → 496.000 → 318.000 ₫; hủy/xác nhận thanh toán; dữ liệu lưu trữ hỏng; bốn bài viết; FAQ và menu bàn phím; kiểm tra biểu mẫu, CV sai định dạng/quá lớn; giảm chuyển động và biểu mẫu khi tắt JavaScript; 12 thẻ danh sách, 4 thẻ nổi bật và 4 thẻ tin tức vẫn hiện khi tắt JavaScript. Giá, tên và ảnh trong thẻ HTML đã được đối chiếu với dữ liệu dùng để tính giỏ hàng. Không ghi nhận lỗi JavaScript, tài nguyên cục bộ HTTP 4xx/5xx, POST hoặc lưu mật khẩu/thông tin biểu mẫu. Các yêu cầu ngoài đã được chặn để kiểm tra phần cục bộ.
 
-Đã xem ảnh chụp giao diện trang chủ trên máy tính/điện thoại và năm trang sản phẩm, chi tiết sản phẩm, liên hệ, chi tiết tin tức, tài khoản ở 1280px và 375px. Không thấy nút bị cắt, ảnh vỡ hay lỗi bố cục cần sửa. Ảnh [trang chủ](giao-dien-trang-chu.png) và [sản phẩm](giao-dien-san-pham.png) được lưu để thuyết trình. Không sử dụng báo cáo S Chicken trong thư mục gốc làm bằng chứng cho sisimimi.
+Đã xem ảnh chụp giao diện trang chủ ở 1280/1440px và 320/375px, cùng ảnh trang sản phẩm ở 1280px. Kiểm tra tự động bên trên bao phủ bố cục cả 11 trang ở năm chiều rộng. Không thấy nút bị cắt, ảnh vỡ hay lỗi bố cục cần sửa. Ảnh [trang chủ](giao-dien-trang-chu.png) và [sản phẩm](giao-dien-san-pham.png) được lưu để thuyết trình. Không sử dụng báo cáo S Chicken trong thư mục gốc làm bằng chứng cho sisimimi.
 
 | Môi trường | Trạng thái |
 |---|---|
-| Chromium tự động trong môi trường phát triển | 78/78 lượt đạt; xem JSON để biết từng nhóm |
+| Chromium tự động trong môi trường phát triển | 80/80 lượt đạt; xem JSON để biết từng nhóm |
 | Google Chrome trên máy nhóm | Chưa xác minh |
 | Microsoft Edge trên máy nhóm | Chưa xác minh |
 | Mozilla Firefox | Chưa xác minh |
 | Điện thoại cảm ứng vật lý | Chưa xác minh |
 | Google Maps qua Internet | Chưa xác minh |
+
+Bản kiểm tra này áp dụng cho giao diện và cấu trúc mới dựa trên **S-Chicken (2).zip**, dùng ba tệp `products.js`, `cart.js`, `main.js`. Không dùng kết quả của phiên bản cũ thay thế cho lần chạy hiện tại.
 
 ## Chuẩn bị
 

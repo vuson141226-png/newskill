@@ -101,45 +101,77 @@ async function fillContact() {
         });
         await check('Danh sách 12 sản phẩm, lọc danh mục và tìm không dấu', 'functional', async () => {
             await go('products.html');
-            assert.equal(await page.locator('.product-card').count(), 12);
-            for (const [category, count] of [['thuc-an', 3], ['do-choi', 2], ['quan-ao', 2], ['phu-kien', 5]]) {
-                await page.locator('[data-category="' + category + '"]').click();
-                assert.equal(await page.locator('.product-card').count(), count);
+            assert.equal(await page.locator('.product-card:visible').count(), 12);
+            // Giá và nội dung HTML phải khớp dữ liệu mà giỏ hàng đang dùng.
+            const catalogData = await page.evaluate(() => products.map(product => ({ id: product.id, name: product.name, price: product.price, image: product.image })));
+            for (const product of catalogData) {
+                const card = page.locator('#product-grid .product-wrapper[data-id="' + product.id + '"]');
+                assert.equal(await card.locator('h3').innerText(), product.name);
+                assert.ok((await card.locator('.product-price').innerText()).includes(product.price.toLocaleString('vi-VN')));
+                assert.equal(await card.locator('img').getAttribute('src'), product.image);
             }
-            await page.locator('[data-category="all"]').click();
+            for (const [category, count] of [['thuc-an', 3], ['do-choi', 2], ['quan-ao', 2], ['phu-kien', 5]]) {
+                await page.locator('.filter-button[data-category="' + category + '"]').click();
+                assert.equal(await page.locator('.product-card:visible').count(), count);
+            }
+            await page.locator('.filter-button[data-category="all"]').click();
             await page.locator('#search-input').fill('vong co');
-            assert.equal(await page.locator('.product-card').count(), 1);
-            assert.match(await page.locator('.product-card h3').innerText(), /Vòng cổ/);
+            assert.equal(await page.locator('.product-card:visible').count(), 1);
+            assert.match(await page.locator('.product-card:visible h3').innerText(), /Vòng cổ/);
         });
         await check('Không có kết quả và kết hợp tìm với lọc', 'functional', async () => {
             await go('products.html');
             await page.locator('#search-input').fill('khong-co-san-pham-nay');
-            assert.equal(await page.locator('.product-card').count(), 0);
+            assert.equal(await page.locator('.product-card:visible').count(), 0);
             assert.ok(await page.locator('#no-products').isVisible());
             await page.locator('#search-input').fill('meo');
-            await page.locator('[data-category="thuc-an"]').click();
-            assert.equal(await page.locator('.product-card').count(), 2);
+            await page.locator('.filter-button[data-category="thuc-an"]').click();
+            assert.equal(await page.locator('.product-card:visible').count(), 2);
         });
         await check('Danh mục truyền qua URL', 'functional', async () => {
             await go('products.html?category=quan-ao');
-            assert.equal(await page.locator('.product-card').count(), 2);
-            assert.equal(await page.locator('[data-category="quan-ao"]').getAttribute('aria-pressed'), 'true');
+            assert.equal(await page.locator('.product-card:visible').count(), 2);
+            assert.equal(await page.locator('.filter-button[data-category="quan-ao"]').getAttribute('aria-pressed'), 'true');
         });
         await check('Chi tiết đúng ID, giới hạn số lượng 1–99', 'functional', async () => {
             await go('product-detail.html?id=2');
             assert.equal(await page.locator('h1').innerText(), 'Áo hoodie cho chó');
             assert.ok(await page.locator('#detail-minus').isDisabled());
             await page.locator('#detail-plus').evaluate(button => { for (let i = 0; i < 110; i++) button.click(); });
-            assert.equal(await page.locator('#detail-quantity').innerText(), '99');
+            assert.equal(await page.locator('#detail-quantity').inputValue(), '99');
             assert.ok(await page.locator('#detail-plus').isDisabled());
             await page.locator('#detail-minus').evaluate(button => { for (let i = 0; i < 110; i++) button.click(); });
-            assert.equal(await page.locator('#detail-quantity').innerText(), '1');
+            assert.equal(await page.locator('#detail-quantity').inputValue(), '1');
             assert.ok(await page.locator('#detail-minus').isDisabled());
+            await page.locator('#detail-quantity').fill('120');
+            await page.locator('#detail-quantity').press('Tab');
+            assert.equal(await page.locator('#detail-quantity').inputValue(), '99');
+            await page.locator('#detail-quantity').fill('2.9');
+            await page.locator('#detail-quantity').press('Tab');
+            assert.equal(await page.locator('#detail-quantity').inputValue(), '2');
+            await page.locator('#detail-quantity').fill('0');
+            await page.locator('#detail-quantity').press('Tab');
+            assert.equal(await page.locator('#detail-quantity').inputValue(), '1');
+        });
+        await check('Bốn sản phẩm liên quan, ưu tiên cùng nhóm; bấm thêm chỉ tăng một lần', 'functional', async () => {
+            await go('product-detail.html?id=1');
+            await page.evaluate(() => localStorage.removeItem('sisimimi-cart'));
+            await page.reload();
+            assert.equal(await page.locator('#related-products .product-card').count(), 4);
+            assert.equal(await page.locator('#related-products a[href="product-detail.html?id=1"]').count(), 0);
+            const categories = await page.locator('#related-products .product-category').allTextContents();
+            assert.ok(categories.every(text => text.includes('Phụ kiện')));
+            await page.locator('#related-products [data-add]').first().click();
+            assert.equal(await page.locator('.cart-count').innerText(), '1');
+            await go('cart.html');
+            assert.equal(await page.locator('.cart-row').count(), 1);
+            assert.equal(await page.locator('.cart-count').innerText(), '1');
         });
         await check('ID sản phẩm không tồn tại', 'functional', async () => {
             await go('product-detail.html?id=999');
             assert.match(await page.locator('h1').innerText(), /Không tìm thấy/);
             assert.equal(await page.locator('#detail-add').count(), 0);
+            assert.ok(await page.locator('#related-products').isHidden());
         });
         await check('Thêm từ danh sách và chi tiết, tổng 337.000 ₫', 'functional', async () => {
             await go('products.html');
@@ -268,7 +300,7 @@ async function fillContact() {
                 await reducedPage.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
                 await reducedPage.goto(base + 'index.html');
                 assert.equal(await reducedPage.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches), true);
-                assert.equal(await reducedPage.locator('.floating-note').evaluate(element => getComputedStyle(element).animationName), 'none');
+                assert.equal(await reducedPage.locator('.floating-tag').evaluate(element => getComputedStyle(element).animationName), 'none');
             } finally { await context.close(); }
         });
         await check('Tắt JavaScript: form không gửi qua nút hoặc Enter', 'no-javascript', async () => {
@@ -324,6 +356,20 @@ async function fillContact() {
                 await noJsPage.locator('#applicant-cv').setInputFiles({ name: 'test.pdf', mimeType: 'application/pdf', buffer: Buffer.from('%PDF fake') });
                 await trySubmit('#application-form', '#applicant-phone');
                 assert.deepEqual(unexpectedRequests, [], 'Không được điều hướng/gửi dữ liệu khi JS tắt');
+            } finally { await context.close(); }
+        });
+        await check('Tắt JavaScript: danh sách sản phẩm, nổi bật và tin tức vẫn có nội dung', 'no-javascript', async () => {
+            const context = await browser.newContext({ javaScriptEnabled: false });
+            try {
+                const noJsPage = await context.newPage();
+                await noJsPage.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
+                await noJsPage.goto(base + 'products.html');
+                assert.equal(await noJsPage.locator('#product-grid .product-card:visible').count(), 12);
+                assert.match(await noJsPage.locator('#product-grid').innerText(), /Vòng cổ mèo nơ hồng/);
+                await noJsPage.goto(base + 'index.html');
+                assert.equal(await noJsPage.locator('#featured-products .product-card:visible').count(), 4);
+                await noJsPage.goto(base + 'news.html');
+                assert.equal(await noJsPage.locator('.news-card:visible').count(), 4);
             } finally { await context.close(); }
         });
         await check('Tắt JavaScript: FAQ native vẫn mở và đóng', 'no-javascript', async () => {

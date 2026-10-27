@@ -7,165 +7,319 @@
     <meta name="theme-color" content="#FFD6E5">
     <title>Trang chủ | sisimimi</title>
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-    <!-- Một file CSS chung; defer giúp JavaScript chạy sau khi HTML đã được đọc -->
+    <!-- CSS dùng chung; ba tệp JS được đọc theo thứ tự dữ liệu → giỏ hàng → tương tác -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Chuyển đến nội dung</a>
-    <div class="announcement">
-      Một thế giới nhỏ, ngập tràn yêu thương <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 5c-3-3-7-1-8 1-1-2-5-4-8-1-5 5 8 15 8 15S25 10 20 5Z"/></svg> Dành cho chó &amp; mèo
-    </div>
     <!-- Header được viết trực tiếp và giữ cùng cấu trúc ở 11 trang -->
+    <!-- Header cùng bố cục trên cả 11 trang; nút mua sắm như bản mẫu -->
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="index.html" aria-label="sisimimi — Trang chủ"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2.2"/><circle cx="16" cy="7" r="2.2"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M6 19c0-3 3-7 6-7s6 4 6 7c0 4-4 1-6 1s-6 3-6-1Z"/></svg><span>sisimimi<span class="logo-dot">.</span><small>THẾ GIỚI NHỎ DÀNH CHO BÉ YÊU</small></span></a>
-        <button class="menu-toggle icon-button" aria-label="Mở menu điều hướng" aria-controls="main-nav" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <button class="menu-toggle icon-button" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="main-nav"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
         <nav id="main-nav" class="main-nav" aria-label="Điều hướng chính">
-          <a href="index.html" class="active" aria-current="page">Trang chủ</a><a href="about.html">Giới thiệu</a><a href="products.html">Sản phẩm</a><a href="news.html">Tin tức</a><a href="contact.html">Liên hệ</a>
+          <a href="index.html" class="active" aria-current="page">Trang chủ</a>
+          <a href="about.html">Giới thiệu</a>
+          <a href="products.html">Sản phẩm</a>
+          <a href="news.html">Tin tức</a>
+          <a href="contact.html">Liên hệ</a>
           <details class="nav-more">
             <summary>Khám phá <span aria-hidden="true">⌄</span></summary>
             <div>
-              <a href="faq.html">Câu hỏi thường gặp</a><a href="careers.html">Tuyển dụng</a>
+              <a href="faq.html">Câu hỏi thường gặp</a>
+              <a href="careers.html">Tuyển dụng</a>
+              <a href="login.html">Đăng nhập / Đăng ký</a>
+              <a href="product-detail.html?id=1">Sản phẩm nổi bật</a>
+              <a href="cart.html">Giỏ hàng</a>
             </div>
           </details>
         </nav>
         <div class="header-actions">
-          <a class="icon-button" href="login.html" aria-label="Tài khoản"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></a><a class="cart-link icon-button" href="cart.html" aria-label="Giỏ hàng"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l2 13H3L5 8Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg><span class="cart-count">0</span></a>
+          <a class="account-link icon-button" href="login.html" aria-label="Tài khoản"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></a>
+          <a class="cart-link icon-button" href="cart.html" aria-label="Giỏ hàng"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l2 13H3L5 8Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg><span class="cart-count">0</span></a>
+          <a class="button small header-shop-button" href="products.html">Mua sắm ngay <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
         </div>
       </div>
     </header>
     <!-- Nội dung riêng của trang index.html -->
     <main id="main-content">
-      <!-- Banner: hai cột trên máy tính, xếp dọc trên điện thoại -->
+      <!-- 1. Banner triển khai theo bố cục hai cột của ZIP S Chicken -->
       <section class="hero">
-        <div class="container hero-grid">
+        <div class="container hero-inner">
           <div class="hero-copy">
-            <span class="pill">Một chút xinh, thật nhiều yêu thương</span>
-            <p class="hero-brand">sisimimi</p>
-            <h1>Thế giới nhỏ<br>dành cho <em>bé yêu.</em></h1>
-            <p>Nơi mang đến những món đồ xinh xắn và đáng yêu cho thú cưng của bạn. Vì mỗi chiếc đuôi vẫy đều xứng đáng được nâng niu.</p>
-            <div class="button-row">
-              <a class="button" href="products.html">Mua sắm ngay <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a><a class="text-link" href="about.html">Gặp gỡ chúng mình ↗</a>
+            <span class="hero-label">THẾ GIỚI NHỎ DÀNH CHO BÉ YÊU</span>
+            <h1>NHỎ XINH<br>CHO BÉ.<br><span>YÊU THƯƠNG<br>MỖI NGÀY!</span></h1>
+            <p>Nơi mang đến những món đồ xinh xắn<br>và đáng yêu cho thú cưng của bạn.</p>
+            <div class="hero-buttons">
+              <a class="button yellow" href="products.html">Mua sắm ngay <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+              <a class="hero-menu-link" href="products.html">Khám phá sản phẩm ↗</a>
             </div>
             <div class="hero-note">
-              <span class="pet-avatars">🐱 🐶</span><span>Dành cho những người bạn nhỏ<br><strong>và người thương của các bé</strong></span>
+              <span aria-hidden="true">♡ ♡ ♡</span> Chọn bằng cả trái tim, dành cho chó &amp; mèo
             </div>
           </div>
-          <div class="hero-art">
-            <img src="images/hero.svg" alt="Minh họa chú chó và mèo đáng yêu trong thế giới hồng pastel" width="640" height="560"><span class="floating-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 5c-3-3-7-1-8 1-1-2-5-4-8-1-5 5 8 15 8 15S25 10 20 5Z"/></svg> Được chọn bằng cả trái tim</span>
+          <div class="hero-visual">
+            <div class="hero-circle" aria-hidden="true">
+            </div>
+            <span class="doodle doodle-one" aria-hidden="true">✦</span>
+            <span class="doodle doodle-two" aria-hidden="true">✧</span>
+            <div class="hero-sticker" aria-hidden="true">
+              100%<small>YÊU THƯƠNG!</small>
+            </div>
+            <img class="hero-food" src="images/hero.svg" width="800" height="700" alt="Minh họa chó và mèo đáng yêu trong góc nhỏ sisimimi" fetchpriority="high">
+            <a class="price-sticker" href="product-detail.html?id=12" aria-label="Xem pate cá ngừ cho mèo, giá 35.000 đồng"><span>MÓN XINH CHỈ TỪ</span><strong>35K</strong><small>Chọn chút vui cho bé!</small></a>
+            <div class="floating-tag">
+              ĂN NGON · CHƠI VUI · DIỆN XINH
+            </div>
           </div>
         </div>
-      </section>
-      <div class="benefit-strip">
-        <div class="container benefits">
-          <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2.2"/><circle cx="16" cy="7" r="2.2"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M6 19c0-3 3-7 6-7s6 4 6 7c0 4-4 1-6 1s-6 3-6-1Z"/></svg> Dành riêng cho chó &amp; mèo</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 5c-3-3-7-1-8 1-1-2-5-4-8-1-5 5 8 15 8 15S25 10 20 5Z"/></svg> Chọn xinh, chọn phù hợp</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z"/></svg> Chăm chút từng niềm vui nhỏ</span>
+        <div class="hero-bottom">
+          THỨC ĂN CHO BÉ <span>✦</span> ĐỒ CHƠI ĐÁNG YÊU <span>✦</span> PHỤ KIỆN NHỎ XINH <span>✦</span> HẸN NHAU SISIMIMI
         </div>
-      </div>
-      <!-- Bốn đường dẫn có truyền danh mục qua URL -->
+      </section>
+      <!-- 2. Dải danh mục: liên kết có truyền nhóm sản phẩm qua URL -->
+      <section class="category-section container">
+        <div class="category-heading">
+          <p class="eyebrow">HÔM NAY BÉ CẦN GÌ?</p>
+          <h2>Chọn xinh<br>đúng ý.</h2>
+        </div>
+        <div class="category-list">
+          <a class="category-item" href="products.html?category=thuc-an"><img src="images/product-9.svg" width="95" height="85" alt="Túi thức ăn cho mèo"><span>Thức ăn</span></a>
+          <a class="category-item" href="products.html?category=do-choi"><img src="images/product-4.svg" width="95" height="85" alt="Bóng len đồ chơi"><span>Đồ chơi</span></a>
+          <a class="category-item" href="products.html?category=quan-ao"><img src="images/product-2.svg" width="95" height="85" alt="Áo hoodie thú cưng"><span>Quần áo</span></a>
+          <a class="category-item" href="products.html?category=phu-kien"><img src="images/product-1.svg" width="95" height="85" alt="Vòng cổ nơ hồng"><span>Phụ kiện</span></a>
+        </div>
+      </section>
+      <!-- 3. Thẻ sản phẩm viết sẵn trong HTML, JavaScript chỉ xử lý thao tác -->
       <section class="section container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Góc nhỏ mua sắm</p>
-            <h2>Bé yêu cần gì hôm nay?</h2>
+            <p class="eyebrow">NHỮNG MÓN XINH KHÔNG THỂ BỎ LỠ</p>
+            <h2>Hội thương bé chọn gì?</h2>
           </div>
-          <p>Từ bữa ăn ngon đến những giờ chơi thật vui.</p>
+          <a class="text-link" href="products.html">Khám phá sản phẩm <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
         </div>
-        <div class="category-grid">
-          <a class="category-card category-peach" href="products.html?category=thuc-an"><img src="images/product-9.svg" alt="Túi thức ăn cho mèo" width="150" height="150">
-          <div>
-            <h3>Thức ăn</h3>
-            <p>Bữa ngon mỗi ngày ↗</p>
+        <div class="product-grid" id="featured-products">
+          <div class="product-wrapper" data-id="1" data-category="phu-kien" data-name="Vòng cổ mèo nơ hồng">
+            <article class="product-card">
+              <a class="product-image" href="product-detail.html?id=1">
+              <img src="images/product-1.svg" alt="Minh họa Vòng cổ mèo nơ hồng"
+              width="400" height="400" loading="lazy">
+              </a>
+              <div class="product-info">
+                <span class="product-category">Phụ kiện · SI001</span>
+                <h3><a href="product-detail.html?id=1">Vòng cổ mèo nơ hồng</a></h3>
+                <p class="product-description">Một chiếc nơ nhỏ xinh cho những buổi dạo chơi cùng bé.</p>
+                <p class="product-feature">Khóa an toàn, điều chỉnh được độ rộng</p>
+                <div class="product-bottom">
+                  <strong class="product-price">89.000 ₫</strong>
+                  <button class="add-button" type="button" data-add="1"
+                  aria-label="Thêm Vòng cổ mèo nơ hồng vào giỏ">+</button>
+                </div>
+                <a class="detail-link" href="product-detail.html?id=1">Xem chi tiết ↗</a>
+              </div>
+            </article>
           </div>
-          </a>
-          <a class="category-card category-pink" href="products.html?category=do-choi"><img src="images/product-4.svg" alt="Bóng len đồ chơi" width="150" height="150">
-          <div>
-            <h3>Đồ chơi</h3>
-            <p>Vui hết nấc cùng bé ↗</p>
+          <div class="product-wrapper" data-id="2" data-category="quan-ao" data-name="Áo hoodie cho chó">
+            <article class="product-card">
+              <a class="product-image" href="product-detail.html?id=2">
+              <img src="images/product-2.svg" alt="Minh họa Áo hoodie cho chó"
+              width="400" height="400" loading="lazy">
+              </a>
+              <div class="product-info">
+                <span class="product-category">Quần áo · SI002</span>
+                <h3><a href="product-detail.html?id=2">Áo hoodie cho chó</a></h3>
+                <p class="product-description">Chiếc áo mềm mại giúp bé ấm áp khi thời tiết se lạnh.</p>
+                <p class="product-feature">Mũ liền áo, dễ mặc và tháo</p>
+                <div class="product-bottom">
+                  <strong class="product-price">159.000 ₫</strong>
+                  <button class="add-button" type="button" data-add="2"
+                  aria-label="Thêm Áo hoodie cho chó vào giỏ">+</button>
+                </div>
+                <a class="detail-link" href="product-detail.html?id=2">Xem chi tiết ↗</a>
+              </div>
+            </article>
           </div>
-          </a>
-          <a class="category-card category-lilac" href="products.html?category=quan-ao"><img src="images/product-2.svg" alt="Áo hoodie thú cưng" width="150" height="150">
-          <div>
-            <h3>Quần áo</h3>
-            <p>Xinh từ đầu đến chân ↗</p>
+          <div class="product-wrapper" data-id="3" data-category="phu-kien" data-name="Bát ăn hình gấu">
+            <article class="product-card">
+              <a class="product-image" href="product-detail.html?id=3">
+              <img src="images/product-3.svg" alt="Minh họa Bát ăn hình gấu"
+              width="400" height="400" loading="lazy">
+              </a>
+              <div class="product-info">
+                <span class="product-category">Phụ kiện · SI003</span>
+                <h3><a href="product-detail.html?id=3">Bát ăn hình gấu</a></h3>
+                <p class="product-description">Góc ăn uống đáng yêu hơn với chiếc bát hình gấu.</p>
+                <p class="product-feature">Đế chống trượt, dễ vệ sinh</p>
+                <div class="product-bottom">
+                  <strong class="product-price">129.000 ₫</strong>
+                  <button class="add-button" type="button" data-add="3"
+                  aria-label="Thêm Bát ăn hình gấu vào giỏ">+</button>
+                </div>
+                <a class="detail-link" href="product-detail.html?id=3">Xem chi tiết ↗</a>
+              </div>
+            </article>
           </div>
-          </a>
-          <a class="category-card category-cream" href="products.html?category=phu-kien"><img src="images/product-1.svg" alt="Vòng cổ nơ hồng" width="150" height="150">
-          <div>
-            <h3>Phụ kiện</h3>
-            <p>Nhỏ xinh mà có võ ↗</p>
+          <div class="product-wrapper" data-id="4" data-category="do-choi" data-name="Đồ chơi bóng len">
+            <article class="product-card">
+              <a class="product-image" href="product-detail.html?id=4">
+              <img src="images/product-4.svg" alt="Minh họa Đồ chơi bóng len"
+              width="400" height="400" loading="lazy">
+              </a>
+              <div class="product-info">
+                <span class="product-category">Đồ chơi · SI004</span>
+                <h3><a href="product-detail.html?id=4">Đồ chơi bóng len</a></h3>
+                <p class="product-description">Quả bóng nhỏ cho mèo đuổi bắt và vận động mỗi ngày.</p>
+                <p class="product-feature">Nhẹ, mềm; dùng khi có người giám sát</p>
+                <div class="product-bottom">
+                  <strong class="product-price">49.000 ₫</strong>
+                  <button class="add-button" type="button" data-add="4"
+                  aria-label="Thêm Đồ chơi bóng len vào giỏ">+</button>
+                </div>
+                <a class="detail-link" href="product-detail.html?id=4">Xem chi tiết ↗</a>
+              </div>
+            </article>
           </div>
-          </a>
         </div>
+        <noscript>
+        <p class="notice">Bạn vẫn xem được sản phẩm. Bật JavaScript để thêm vào giỏ và tìm kiếm.</p>
+        </noscript>
       </section>
-      <section class="section section-soft">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Được chọn vì đáng yêu</p>
-              <h2>Những món xinh nổi bật</h2>
-            </div>
-            <a class="text-link" href="products.html">Xem tất cả sản phẩm <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
-          </div>
-          <div class="product-grid" id="featured-products">
-          </div>
-          <noscript>
-          <p>Bật JavaScript để xem sản phẩm và sử dụng giỏ hàng.</p>
-          </noscript>
-        </div>
-      </section>
-      <section class="container section">
-        <div class="promotion">
-          <div>
-            <p class="eyebrow">Một lời chào thật ngọt</p>
-            <h2>Ưu đãi xinh xắn<br><em>Giảm 10%</em> cho đơn hàng đầu tiên</h2>
-            <p>Chương trình minh họa cho bài tập. Giá giỏ hàng chưa áp dụng ưu đãi.</p>
-            <a class="button button-dark" href="products.html">Khám phá ngay <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
-          </div>
-          <div class="promotion-art" aria-hidden="true">
-            🎁<span>HELLO, BÉ YÊU!</span>
-          </div>
-        </div>
-      </section>
-      <section class="container section story-grid">
-        <img class="story-image" src="images/about.svg" alt="Góc cửa hàng sisimimi ấm áp với thú cưng" loading="lazy" width="600" height="450">
+      <!-- 4. Khuyến mãi chỉ là nội dung minh họa, chưa trừ vào tổng giỏ -->
+      <section class="container promo-banner">
         <div>
-          <p class="eyebrow">Chào bạn, chúng mình là sisimimi</p>
+          <p class="eyebrow">LỜI CHÀO THẬT NGỌT TỪ SISIMIMI</p>
+          <h2>ƯU ĐÃI XINH XẮN<br><span>GIẢM 10%</span></h2>
+          <p>Cho đơn hàng đầu tiên của bé.<br>Gom những món đáng yêu, mang một chút vui về nhà.</p>
+          <a class="button yellow" href="products.html">Khám phá ngay <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+          <p class="promo-note">Chương trình minh họa cho bài tập; giá giỏ hàng chưa áp dụng ưu đãi.</p>
+        </div>
+        <div class="promo-photo">
+          <img src="images/product-5.svg" width="600" height="500" alt="Chiếc giường hồng êm ái dành cho mèo" loading="lazy">
+        </div>
+      </section>
+      <!-- 5. Câu chuyện và ba giá trị, cùng cách sắp xếp của trang mẫu -->
+      <section class="section container about-preview">
+        <div class="about-image">
+          <img src="images/about.svg" width="800" height="580" alt="Minh họa cửa hàng sisimimi ấm áp" loading="lazy">
+        </div>
+        <div>
+          <p class="eyebrow">XIN CHÀO, CHÚNG MÌNH LÀ SISIMIMI</p>
           <h2>Những điều bé nhỏ.<br>Tình yêu thật lớn.</h2>
-          <p>Chúng mình tin rằng chăm sóc một người bạn bốn chân bắt đầu từ những điều giản dị: một bữa ăn vừa ý, một chiếc ổ êm và thời gian bên nhau.</p>
-          <p>sisimimi là ý tưởng cửa hàng dành cho chó, mèo — nơi mọi lựa chọn đều đi cùng sự quan tâm.</p>
-          <a class="text-link" href="about.html">Tìm hiểu thêm <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+          <p>Từ bữa ăn vừa ý đến chiếc ổ êm, sisimimi mong mỗi ngày bên người bạn bốn chân đều trở thành một kỷ niệm thật dịu dàng.</p>
+          <p>Một ý tưởng cửa hàng dành cho chó và mèo, để bạn tìm được món đồ phù hợp mà vẫn thật đáng yêu.</p>
+          <a class="text-link" href="about.html">Câu chuyện của chúng mình ↗</a>
+          <div class="mini-values">
+            <div>
+              <b>01</b><strong>Chọn đồ phù hợp</strong>
+            </div>
+            <div>
+              <b>02</b><strong>Chăm chút từng bé</strong>
+            </div>
+            <div>
+              <b>03</b><strong>Mua sắm dễ dàng</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="benefits">
+        <div class="container benefits-grid">
+          <div>
+            <span aria-hidden="true">✦</span>
+            <h3>Xinh đúng ý bé</h3>
+            <p>Những món đồ mẫu có thông tin rõ ràng, dễ tìm.</p>
+          </div>
+          <div>
+            <span aria-hidden="true">♡</span>
+            <h3>Quan tâm từng chút</h3>
+            <p>Chọn theo nhu cầu và sự thoải mái của bé yêu.</p>
+          </div>
+          <div>
+            <span aria-hidden="true">◷</span>
+            <h3>Tìm nhanh, chọn dễ</h3>
+            <p>Tìm kiếm, lọc danh mục và xem chi tiết trong vài bước.</p>
+          </div>
+          <div>
+            <span aria-hidden="true">☺</span>
+            <h3>Niềm vui nho nhỏ</h3>
+            <p>Dành thời gian bên nhau mới là món quà đặc biệt.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CHUYỆN CỦA BÉ, NIỀM VUI CỦA MÌNH</p>
+            <h2>Có gì mới ở sisimimi?</h2>
+          </div>
+          <a class="text-link" href="news.html">Xem tất cả bài viết ↗</a>
+        </div>
+        <div class="news-grid home-news-grid">
+          <article class="news-card">
+            <a class="news-image" href="news-detail.html?id=1"><img src="images/news-1.svg" alt="Minh họa Cách chăm sóc mèo con mới về nhà" width="600" height="400" loading="lazy"></a>
+            <div class="news-info">
+              <p class="eyebrow">Chăm sóc mèo</p>
+              <h2><a href="news-detail.html?id=1">Cách chăm sóc mèo con mới về nhà</a></h2>
+              <p class="news-meta">Mai An · 20/10/2026 · Bài viết mẫu</p>
+              <p>Một góc nhỏ yên tĩnh, chiếc bát quen và thật nhiều kiên nhẫn: bắt đầu tình bạn mới theo cách nhẹ nhàng.</p>
+              <a class="text-link" href="news-detail.html?id=1">Đọc thêm →</a>
+            </div>
+          </article>
+          <article class="news-card">
+            <a class="news-image" href="news-detail.html?id=2"><img src="images/news-2.svg" alt="Minh họa Những món đồ chơi giúp chó vận động" width="600" height="400" loading="lazy"></a>
+            <div class="news-info">
+              <p class="eyebrow">Chơi cùng bé</p>
+              <h2><a href="news-detail.html?id=2">Những món đồ chơi giúp chó vận động</a></h2>
+              <p class="news-meta">Minh Thư · 18/10/2026 · Bài viết mẫu</p>
+              <p>Biến thời gian chơi thành những khoảnh khắc kết nối, với đồ chơi vừa kích thước và mức năng lượng của bé.</p>
+              <a class="text-link" href="news-detail.html?id=2">Đọc thêm →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="last-call">
+        <div class="container">
+          <div>
+            <p class="eyebrow">MỘT CHÚT XINH CHO HÔM NAY</p>
+            <h2>Bé yêu đang chờ.<br>Cùng chọn món xinh nhé!</h2>
+          </div>
+          <a class="button yellow" href="products.html">Khám phá sản phẩm ↗</a>
         </div>
       </section>
     </main>
     <!-- Footer: thông tin mẫu được ghi rõ để tránh hiểu là cửa hàng thật -->
+    <!-- Chân trang theo mẫu: nhận diện, danh mục liên kết và thông tin -->
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a class="logo" href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2.2"/><circle cx="16" cy="7" r="2.2"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M6 19c0-3 3-7 6-7s6 4 6 7c0 4-4 1-6 1s-6 3-6-1Z"/></svg><span>sisimimi<span class="logo-dot">.</span></span></a>
-          <p>Thế giới nhỏ dành cho bé yêu.</p>
-          <p>Những món đồ xinh xắn, cho những người bạn đặc biệt nhất của chúng mình.</p>
-          <div class="social-links">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook, liên kết nền tảng minh họa">Facebook ↗</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram, liên kết nền tảng minh họa">Instagram ↗</a>
+          <a class="footer-logo logo" href="index.html" aria-label="sisimimi — Trang chủ"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2.2"/><circle cx="16" cy="7" r="2.2"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M6 19c0-3 3-7 6-7s6 4 6 7c0 4-4 1-6 1s-6 3-6-1Z"/></svg><span>sisimimi<span class="logo-dot">.</span></span></a>
+          <p>Thế giới nhỏ dành cho bé yêu.<br>Những món đồ xinh, thật nhiều yêu thương.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook, liên kết nền tảng minh họa">f</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram, liên kết nền tảng minh họa">◎</a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube, liên kết nền tảng minh họa">▶</a>
           </div>
         </div>
         <div>
-          <h2>Ghé thăm sisimimi</h2><a href="about.html">Về chúng mình</a><a href="products.html">Góc mua sắm</a><a href="news.html">Nhật ký của bé</a><a href="careers.html">Cùng làm việc</a>
+          <h3>Khám phá sisimimi</h3><a href="about.html">Câu chuyện chúng mình</a><a href="products.html">Góc mua sắm</a><a href="product-detail.html?id=1">Sản phẩm nổi bật</a><a href="news.html">Nhật ký của bé</a>
         </div>
         <div>
-          <h2>Chúng mình hỗ trợ</h2><a href="contact.html">Liên hệ</a><a href="faq.html">Câu hỏi thường gặp</a><a href="cart.html">Giỏ hàng của bạn</a><a href="login.html">Tài khoản</a>
+          <h3>Chúng mình hỗ trợ</h3><a href="contact.html">Liên hệ</a><a href="faq.html">Câu hỏi thường gặp</a><a href="careers.html">Tuyển dụng</a><a href="login.html">Đăng nhập / Đăng ký</a><a href="cart.html">Giỏ hàng của bạn</a>
         </div>
         <div>
-          <h2>Thông tin minh họa</h2>
+          <h3>Thông tin minh họa</h3>
           <p>12 Chùa Bộc, Đống Đa, Hà Nội</p>
           <p>0900 123 456</p>
           <p>hello@sisimimi.example</p>
           <p>09:00 – 21:00, mỗi ngày</p>
+          <small>Địa chỉ, số điện thoại, nhân sự và đánh giá đều là dữ liệu mẫu.</small>
         </div>
       </div>
       <div class="container footer-bottom">
         <p>© 2026 sisimimi. Được làm với thật nhiều yêu thương ♡</p>
-        <p>Bài tập thiết kế web · Mua hàng, tài khoản và biểu mẫu đều mô phỏng.</p>
+        <p>Bài tập thiết kế web · Tài khoản, biểu mẫu và đặt hàng đều mô phỏng.</p>
       </div>
     </footer>
     <div id="toast" class="toast" role="status" aria-live="polite">

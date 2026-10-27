@@ -2,7 +2,7 @@
 
 Website bài tập nhóm bán đồ dùng, thức ăn, quần áo và phụ kiện cho chó, mèo. Dự án có **11 trang HTML**, dùng **HTML5, CSS3 và JavaScript thuần**, không có framework, công cụ build hoặc cơ sở dữ liệu.
 
-Website mới nằm riêng trong thư mục `sisimimi/` của kho mã; website S Chicken ở thư mục gốc được giữ nguyên. Khi chạy, hãy mở đúng `sisimimi/index.html`.
+Website nằm riêng trong thư mục `sisimimi/` của kho mã; website S Chicken ở thư mục gốc được giữ nguyên. Khi chạy, hãy mở đúng `sisimimi/index.html`. Bản thiết kế này tham chiếu bố cục và cách chia mã của tệp người dùng cung cấp **`S-Chicken(2).zip`**; màu sắc, nội dung và hình minh họa được chuyển sang cửa hàng thú cưng. Xem [ghi chú đối chiếu](docs/THAM_CHIEU.md).
 
 ## Mở trên máy tính
 
@@ -38,9 +38,13 @@ Trên Windows, có thể dùng `py -m http.server 8000`. Dùng địa chỉ máy
 | `cart.html` | Giỏ hàng dùng chung, tổng tiền và xác nhận mô phỏng |
 | `careers.html` | Vị trí tuyển dụng và biểu mẫu ứng tuyển mô phỏng |
 | `css/style.css` | Màu sắc, bố cục và responsive chung |
-| `js/script.js` | Dữ liệu sản phẩm, bài viết và các tương tác |
+| `js/products.js` | Dữ liệu 12 sản phẩm, tên danh mục, định dạng tiền và tìm sản phẩm |
+| `js/cart.js` | Đọc/lưu giỏ dùng chung, số lượng và tổng tiền |
+| `js/main.js` | Card liên quan, bộ lọc, chi tiết, menu, biểu mẫu và bài viết |
 | `images/` | Minh họa SVG cục bộ; xem `images/SOURCES.md` |
 | `docs/` | Hướng dẫn, báo cáo và bảng phân công |
+
+Danh sách sản phẩm, sản phẩm nổi bật và danh sách tin tức được viết sẵn trong HTML để dễ đọc và giữ nội dung khi tắt JavaScript. Bộ lọc chỉ ẩn/hiện các `.product-wrapper`. Khi đổi tên, giá hoặc ảnh, cập nhật **cả dữ liệu trong `products.js` lẫn các thẻ HTML tương ứng**. Nội dung chi tiết và giá tính giỏ lấy từ dữ liệu JavaScript dùng chung.
 
 ## Học, sửa và thuyết trình
 

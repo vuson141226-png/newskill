@@ -5,5 +5,5 @@
 4,,,"Liên hệ, FAQ và tài khoản",contact.html; faq.html; login.html,,,,
 5,,,Giỏ hàng và tuyển dụng,cart.html; careers.html,,,,
 6,,,"CSS chung, responsive và hình minh họa",css/style.css; images/,,,,
-7,,,"JavaScript, kiểm thử và sửa lỗi",js/script.js; toàn bộ website,,,,
+7,,,"JavaScript, kiểm thử và sửa lỗi",js/products.js; js/cart.js; js/main.js; toàn bộ website,,,,
 8,,,"Tài liệu, PowerPoint, tổng hợp bài nộp",README.md; docs/,,,,

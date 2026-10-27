@@ -26,7 +26,7 @@ HTML5 tạo cấu trúc ngữ nghĩa. CSS3 dùng Flexbox/Grid, media query, hove
 
 ### Slide 6 — Cấu trúc thư mục
 
-11 HTML ở thư mục `sisimimi`, một stylesheet `css/style.css`, một script `js/script.js`, thư mục `images` chứa SVG cục bộ và thư mục `docs` chứa tài liệu. Đường dẫn tương đối giúp mang dự án sang máy khác mà không cần thay đường dẫn ổ đĩa.
+11 HTML ở thư mục `sisimimi`, một stylesheet `css/style.css`, ba script `js/products.js`, `js/cart.js`, `js/main.js`, thư mục `images` chứa SVG cục bộ và thư mục `docs` chứa tài liệu. Đường dẫn tương đối giúp mang dự án sang máy khác mà không cần thay đường dẫn ổ đĩa.
 
 ### Slide 7 — Sơ đồ liên kết
 
@@ -51,11 +51,11 @@ Header/footer giúp di chuyển đến các trang chính. Mũi tên mô tả lu�
 
 ### Slide 8 — Giao diện và nhận diện
 
-Hồng pastel kết hợp trắng hồng và kem; chữ nâu đậm. Nút bo tròn, card đồng bộ, hình minh họa thú cưng tự chứa ở máy người dùng. Header/footer thống nhất và trang đang mở được đánh dấu. Không dùng thư viện giao diện. Slide 8 trong PowerPoint có hai ảnh chụp thật từ website bằng Chromium ở viewport 1280 × 900px: [trang chủ](giao-dien-trang-chu.png) và [sản phẩm](giao-dien-san-pham.png).
+Hồng pastel kết hợp trắng hồng và kem; chữ nâu đậm. Nút bo tròn, card đồng bộ, hình minh họa thú cưng tự chứa ở máy người dùng. Header/footer thống nhất và trang đang mở được đánh dấu. Bố cục dựa trên tệp người dùng cung cấp `S-Chicken(2).zip`: hero, dải lợi ích, danh mục, sản phẩm, khuyến mãi, câu chuyện và tin tức. Màu sắc, nội dung và minh họa chuyển sang thú cưng; không dùng thư viện giao diện. Slide 8 trong PowerPoint có hai ảnh chụp thật từ website bằng Chromium ở viewport 1280 × 900px: [trang chủ](giao-dien-trang-chu.png) và [sản phẩm](giao-dien-san-pham.png).
 
 ### Slide 9 — Sản phẩm và tin tức
 
-Dữ liệu mẫu trong mảng JavaScript; card danh sách và trang chi tiết dùng chung nguồn. Tìm kiếm theo tên và lọc 4 nhóm. URL `product-detail.html?id=1` hoặc `news-detail.html?id=1` xác định nội dung. ID sai có trạng thái không tìm thấy.
+12 card sản phẩm và 4 bài viết danh sách có sẵn trong HTML, tương tự cách tổ chức bản ZIP tham chiếu. Bộ lọc đặt `hidden` trên `.product-wrapper`. `products.js` cung cấp dữ liệu cho chi tiết, card liên quan và tính giá giỏ; `main.js` cung cấp nội dung chi tiết bài viết. Khi sửa nội dung phải cập nhật các thẻ HTML tương ứng. Tìm kiếm theo tên và lọc 4 nhóm. URL `product-detail.html?id=1` hoặc `news-detail.html?id=1` xác định nội dung. ID sai có trạng thái không tìm thấy.
 
 ### Slide 10 — Giỏ hàng và lưu trữ
 
@@ -71,7 +71,7 @@ Lưới sản phẩm thay số cột theo màn hình; chi tiết chuyển thành
 
 ### Slide 13 — Khó khăn, kết quả và giới hạn
 
-Khó khăn: đồng bộ giỏ nhiều trang, dữ liệu lưu hỏng, đường dẫn ảnh, bố cục hẹp và biểu mẫu thiếu trường. Giải pháp: dữ liệu dùng chung, kiểm tra ID/số lượng, đường dẫn tương đối, media query và kiểm tra tính hợp lệ. Kết quả mã nguồn gồm 11 trang và các tương tác ở trình duyệt. Bản đồ ngoài cần Internet; nội dung thương hiệu, giá, đánh giá và tuyển dụng là mẫu. Kết quả chạy cụ thể cần lấy từ báo cáo kiểm thử.
+Khó khăn: đồng bộ giỏ nhiều trang, dữ liệu lưu hỏng, đường dẫn ảnh, bố cục hẹp và biểu mẫu thiếu trường. Giải pháp: ba script có nhiệm vụ rõ ràng, dữ liệu giá giỏ dùng chung, đồng bộ thẻ HTML, kiểm tra ID/số lượng, đường dẫn tương đối, media query và kiểm tra tính hợp lệ. Những thuộc tính HTML hỏng và nguy cơ gắn sự kiện thêm giỏ nhiều lần của mã tham chiếu được sửa có chủ ý, không sao chép nguyên lỗi. Kết quả mã nguồn gồm 11 trang và các tương tác ở trình duyệt. Bản đồ ngoài cần Internet; nội dung thương hiệu, giá, đánh giá và tuyển dụng là mẫu. Kết quả chạy cụ thể cần lấy từ báo cáo kiểm thử.
 
 ### Slide 14 — Hướng phát triển và kết luận
 
@@ -95,6 +95,10 @@ Chuẩn bị sẵn giỏ trống trước demo. Giữ nguyên tên miền/cổng
 **HTML, CSS, JavaScript khác nhau thế nào?** HTML là cấu trúc/nội dung; CSS là trình bày; JavaScript là hành vi khi tương tác.
 
 **Vì sao không có database vẫn có giỏ hàng?** Giỏ là dữ liệu nhỏ ở localStorage của trình duyệt. Nó không được chia sẻ giữa các máy và không phải đơn hàng của cửa hàng thật.
+
+**Vì sao sửa sản phẩm cần sửa cả HTML?** Danh sách và bốn thẻ nổi bật được viết sẵn để sinh viên dễ đọc và nội dung còn xuất hiện khi tắt JavaScript. `products.js` cung cấp dữ liệu cho chi tiết và giá giỏ; phải giữ hai phần nhất quán.
+
+**Vì sao tách ba tệp JavaScript?** Dữ liệu, tên danh mục, định dạng tiền và tìm ID ở `products.js`; giỏ ở `cart.js`; card liên quan và các tương tác trang ở `main.js`. HTML nạp theo đúng thứ tự để các hàm có dữ liệu cần dùng.
 
 **Vì sao giá không lưu trong giỏ?** Mỗi dòng chỉ cần ID/số lượng; giá đọc từ dữ liệu sản phẩm chung, tránh lệch nhiều nguồn.
 
