@@ -1,107 +1,91 @@
-# Các dự án Thiết kế Web
+# Chấm công lương — 1.0.0
 
-## Mới: sisimimi — Thế giới nhỏ dành cho bé yêu
+Bản phát hành đã kiểm thử, có giới hạn dữ liệu và chốt hiển thị số tiền an toàn. Chi tiết trong `RELEASE_NOTES.md`.
 
-Website bán đồ **dành riêng cho chó và cún con**, có **11 trang**, giao diện hồng pastel, HTML/CSS/JavaScript thuần. Mở **[sisimimi/index.html](sisimimi/index.html)** bằng Live Server sau khi tải kho mã về máy.
+App cá nhân React + Vite + TypeScript + Tailwind. Chấm SEO/Marketing theo buổi, tính phí đi quay và tổng ngày/tuần/tháng. Không đăng nhập, không backend, không gửi dữ liệu chấm công ra ngoài. Không bơm dữ liệu mẫu vào app.
 
-Bản sisimimi đã được chỉnh theo cách triển khai trong ZIP **S-Chicken (2).zip**: bố cục trang chủ, điều hướng, thẻ sản phẩm HTML có sẵn và ba tệp JavaScript tách riêng. Bộ 12 ảnh sản phẩm dùng PNG nền trong suốt theo phong cách ảnh chụp. Xem [đối chiếu mẫu tham chiếu](sisimimi/docs/THAM_CHIEU.md).
+## Chạy và build
 
-- [Mã nguồn và hướng dẫn chạy](sisimimi/README.md)
-- [Hướng dẫn học theo 9 giai đoạn](sisimimi/docs/HUONG_DAN.md)
-- [PowerPoint báo cáo](sisimimi/docs/BAO_CAO.pptx) · [Excel phân công](sisimimi/docs/PHAN_CONG.xlsx)
-- [Kết quả kiểm thử](sisimimi/docs/KIEM_THU.md)
-
-Thư mục `sisimimi/` độc lập với dự án S Chicken bên dưới. Có thể tải riêng gói `NhomX_sisimimi.zip` trong kho mã, giải nén và mở thư mục `sisimimi` bằng Visual Studio Code. Thay `X` bằng số nhóm thật trước khi nộp bài.
-
----
-
-# S Chicken — Website Thiết kế Web
-
-Bản thiết kế lại gồm **10 trang HTML**, dùng HTML5, CSS3 và JavaScript thuần. Website không dùng framework, backend, cơ sở dữ liệu, npm hay công cụ build. Logo, 15 món, ID, giá bán và dữ liệu minh họa của dự án ban đầu được giữ lại.
-
-## Chạy dự án
-
-1. Mở thư mục dự án trong Visual Studio Code.
-2. Cài tiện ích **Live Server** của Ritwick Dey.
-3. Nhấp phải `index.html` → **Open with Live Server**.
-4. Dùng cùng địa chỉ và cổng khi thử các trang để localStorage dùng chung.
-
-Nếu máy đã có Python, có thể phục vụ tệp tĩnh bằng lệnh sau, chạy trong thư mục chứa `index.html`:
+Yêu cầu Node.js 22.12+ hoặc 24 LTS.
 
 ```sh
-python3 -m http.server 8000
+npm ci
+npm run dev
+npm run build
+npm run preview
 ```
 
-Mở địa chỉ mà công cụ thông báo trong trình duyệt. Đây là máy chủ tệp phục vụ kiểm thử, không phải backend. Không cần cài Python, Node hoặc bất kỳ gói npm nào khi chạy bằng Live Server. Mở HTML trực tiếp vẫn hiển thị giao diện, nhưng hành vi localStorage với `file:` khác nhau giữa các trình duyệt.
+Bản triển khai nằm trong `dist/`. Màu sáng/tối theo hệ thống. Font Be Vietnam Pro và IBM Plex Mono nằm trong dự án, giấy phép được đóng gói vào `dist/licenses/` từ `public/licenses/`.
 
-## Cấu trúc
+## Kiểm thử
 
-```text
-index.html                 Trang chủ
-about.html                 Giới thiệu, sứ mệnh, đội ngũ minh họa
-products.html              15 món, 5 danh mục, tìm kiếm
-product-detail.html        Chi tiết theo ?id=, số lượng, món liên quan
-blog.html                  6 bài viết có mở rộng nội dung
-contact.html               Thông tin liên hệ mẫu, form và bản đồ
-faq.html                   9 câu hỏi mở/đóng
-login.html                 Đăng nhập/đăng ký mô phỏng
-cart.html                  Giỏ hàng, tổng tiền, thanh toán mô phỏng
-careers.html               3 vị trí và form ứng tuyển
-css/style.css              Bố cục và thành phần của 10 trang
-css/tokens.css             Màu, chữ, khoảng cách, kích thước, thời gian
-css/base.css               Nền tảng, font, trợ năng, container
-js/products.js             Dữ liệu 15 món và hàm định dạng giá
-js/cart.js                 localStorage, thêm/xóa, số lượng và tổng tiền
-js/main.js                 Menu, lọc, chi tiết, FAQ, biểu mẫu
-fonts/                     Be Vietnam Pro cục bộ + giấy phép OFL
-images/                    14 ảnh/SVG của dự án và thông tin nguồn
-docs/                      Báo cáo, phân công, kiểm thử, đối chiếu đề bài
+```sh
+npm test
+npx playwright install chromium
+npm run test:e2e
 ```
 
-HTML chỉ liên kết `css/style.css`; tệp này nhập `tokens.css` và `base.css` bằng CSS `@import`. Cả 10 trang dùng chung hệ thống, không cần bước biên dịch. Header/footer có sẵn trong từng HTML để nội dung điều hướng vẫn hiện khi JavaScript bị tắt.
+`npm test`: 157 test đơn vị, gồm logic tiền, giới hạn dữ liệu, kiểm tra file, lưu trữ và phòng thủ hiển thị. `npm run test:e2e`: build rồi chạy 28 test trình duyệt Chromium, gồm thao tác nhập kịch bản, bàn phím, 360/400/768/1280px, sáng/tối, axe WCAG AA và quyền riêng tư. Không cần chạy server riêng; test tự mở/tắt server preview ở cổng 4173.
 
-## Hệ thống thiết kế
+Nếu đã có Chromium của hệ thống, có thể dùng `CHAMCONG_CHROMIUM_PATH=/usr/bin/chromium npm run test:e2e` trên Linux. Các phụ thuộc Playwright/axe chỉ dùng khi phát triển và kiểm thử, không có trong bản app.
 
-- Đỏ `#C62828`, đỏ đậm `#991B1B`, vàng `#FFB800`, nền kem `#FFF8EF`.
-- Be Vietnam Pro 400/700/800 được lưu cục bộ; Arial/sans-serif dự phòng; `font-display: swap`.
-- Container tối đa 1280px; Grid/Flexbox; kích thước chữ dùng `clamp()`.
-- Nút đặt món, thẻ sản phẩm, biểu mẫu, header/footer dùng chung kiểu.
-- Menu SVG trên điện thoại, trạng thái focus rõ, nhãn trợ năng cho giỏ hàng.
-- Hover/zoom nhẹ, mở FAQ và menu; `prefers-reduced-motion` giảm chuyển động.
-- Mỗi trang có title riêng và cách tổ chức nội dung phù hợp. Trang chủ ưu tiên món ăn, thực đơn ưu tiên lọc, giỏ ưu tiên tổng tiền, form ưu tiên khả năng nhập.
+Kiểm tra múi giờ và mã thừa bằng shell hỗ trợ biến môi trường:
 
-Xem [nhật ký thay đổi và đối chiếu đề bài](docs/THAY_DOI.md).
+```sh
+TZ=UTC npm test
+TZ=America/Los_Angeles npm test
+TZ=Asia/Ho_Chi_Minh npm test
+npx tsc --noEmit --noUnusedLocals --noUnusedParameters
+```
 
-## Giải thích mã quan trọng
+Hai file `src/logic.ts`, `src/logic.test.ts` giữ nguyên. Test hồi quy phát hành nằm trong `src/release.test.ts` và `tests/release.spec.ts`; giới hạn dữ liệu được kiểm tra trong `src/money-limit.test.ts`, `src/money-display.test.ts` và `tests/limits.spec.ts`. Xem kết quả và giới hạn kiểm tra trong `RELEASE_NOTES.md`.
 
-**Dữ liệu món:** `js/products.js` chứa các đối tượng `id`, `name`, `category`, `price`, `image`, `description`, `ingredients`. Giá là số nguyên đồng Việt Nam. Trang chi tiết đọc ID qua `URLSearchParams` và dùng `find` để tìm món. Khi sửa tên, giá hoặc ảnh, cập nhật cả dữ liệu JS lẫn thẻ món tĩnh trong `products.html`/`index.html`.
+## Đổi mức tiền
 
-**Giỏ hàng:** khóa `schicken-cart` chỉ lưu `{ id, quantity }`. Giá tính từ `products.js`; số lượng giới hạn 1–99. Dữ liệu null, ID lạ, số âm và JSON lỗi được xử lý. Sau tăng/giảm/xóa, DOM được vẽ lại và focus bàn phím chuyển về điều khiển phù hợp. Nếu lưu trữ bị chặn, giỏ vẫn dùng trong trang hiện tại, nhưng không bảo đảm giữ khi chuyển trang.
+Mở “Mức lương và phí hỗ trợ”, nhập số nguyên đồng từ 0 đến 100.000.000, không có dấu phân cách nghìn, rồi rời ô để lưu. Mức mới tính lại mọi ngày, kể cả tháng cũ. Giá trị sai trở về mức trước đó và có thông báo. Khôi phục mặc định có xác nhận ngay trong trang và không xóa ngày chấm công.
 
-**Biểu mẫu:** thuộc tính HTML `required`, `type`, `pattern`, `minlength` mô tả quy tắc. JavaScript kiểm tra tính hợp lệ, chuỗi trắng và mật khẩu xác nhận; thêm `aria-invalid`, hiện lỗi bằng `textContent`, đưa focus đến trường sai. Không lưu mật khẩu hoặc tạo tài khoản thật.
+Mốc km cố định: dưới 5 không có phí; 5–10 (gồm đúng 10) dùng mức 1; trên 10 đến dưới 20 dùng mức 2; từ 20 dùng mức 3. Ô km chấp nhận dấu phẩy hoặc dấu chấm; số âm thành 0, chuỗi sai thành trống khi rời ô.
 
-**FAQ/menu:** sự kiện cập nhật `aria-expanded` cùng trạng thái hiển thị; Escape đóng menu; animation dùng opacity/transform và tôn trọng giảm chuyển động.
+## Giới hạn dữ liệu
 
-**Mô phỏng:** thanh toán mở hộp xác nhận rồi xóa giỏ, không thu tiền hoặc gửi đơn. Form liên hệ/ứng tuyển không gửi dữ liệu. Liên kết mạng xã hội dẫn tới nền tảng, không phải kênh chính thức của thương hiệu.
+Các hằng số được khai báo duy nhất tại `src/limits.ts` và dùng chung cho UI, store, nhập file và đọc localStorage:
 
-## Hình ảnh và font
+- Mỗi mức tiền trong 5 mức: số nguyên từ **0 đến 100.000.000 ₫**, gồm cả hai đầu.
+- Khoảng cách: **0 đến 1.000 km**, cho phép thập phân hoặc trống (`null`). Ô nhập vẫn giữ quy tắc chuẩn hóa trước đó: số âm thành 0, chữ không hợp lệ thành trống; số vượt trần bị từ chối và trả lại km cũ.
+- Mỗi ngày tối đa **20 lần đi quay**. Bấm thêm lần thứ 21 không tạo dòng hay ghi dữ liệu và hiện giới hạn ngay tại nút.
 
-Giữ 14 hình cục bộ của dự án (8 raster + 6 SVG, gồm logo). Các biến thể gà/burger có thể dùng chung ảnh minh họa; đồ uống, khoai và đội ngũ là SVG gốc. Nên thay bằng ảnh tự chụp đúng từng món khi có tư liệu.
+Ô Cài đặt vượt trần trả về mức trước đó và báo giới hạn. File vi phạm bị từ chối nguyên bộ, có đường dẫn trường sai trong thông báo. Dữ liệu đã lưu sẵn vi phạm, kể cả sau chuyển đổi định dạng cũ, được bảo toàn nguyên văn sang khóa sao lưu trước khi khởi tạo mới. Bản hoàn tác không hợp lệ cũng được giữ sang khóa sao lưu, không đưa lại vào app. Giới hạn áp dụng cả khi app chỉ chạy trong bộ nhớ do localStorage bị chặn.
 
-Nguồn ảnh Foodie/Grilli, thông tin cấp phép hiện có và giới hạn nằm trong [images/SOURCES.md](images/SOURCES.md). Giấy phép Grilli MIT được giữ lại. **Quyền riêng từng ảnh chưa được xác minh**; không coi giấy phép mã nguồn là chứng nhận quyền thương mại cho tất cả ảnh. Nguồn ảnh là tư liệu của dự án gửi ban đầu.
+Một tháng 31 ngày với hai buổi/ngày, 20 lần quay/ngày và mọi mức tiền đều ở trần có tổng tối đa **68.200.000.000 ₫**, vẫn là số nguyên an toàn. Lớp phòng thủ hiển thị kiểm tra `Number.isSafeInteger` cho tổng tháng, tuần, ngày và các số tiền chi tiết; nếu nhận số không an toàn, app hiện cảnh báo thay cho số sai và không sao chép bảng tiền đó. Hai file logic cũ không sửa.
 
-Be Vietnam Pro được phân phối theo SIL Open Font License; giữ [fonts/OFL.txt](fonts/OFL.txt) cùng font. Font cục bộ giúp giao diện không phụ thuộc dịch vụ font ngoài. Bản đồ Google Maps vẫn cần Internet; địa chỉ Chùa Bộc là minh họa.
+## Sao lưu và khôi phục
 
-## Kiểm tra và bàn giao
+- “Xuất dữ liệu” tải `chamcong-YYYY-MM-DD.json` theo ngày địa phương, chứa đúng `schemaVersion`, `rates`, `days`.
+- “Nhập dữ liệu” chỉ nhận file `.json`, `schemaVersion: 1`, đủ trường, ngày có thật, buổi hợp lệ, km không âm hoặc null, tiền nguyên không âm. File lỗi không thay đổi dữ liệu.
+- File đúng hiện bản xem trước. Chỉ bấm “Thay thế toàn bộ dữ liệu hiện tại” mới thay cả ngày và mức tiền; có thể hủy trước đó.
+- Trước khi thay, bản hiện tại được giữ và xác minh trong khóa hoàn tác riêng. “Hoàn tác lần nhập gần nhất” khôi phục cả ngày và mức tiền, thay thế cả các sửa đổi sau lần nhập. Hoàn tác vẫn có sau tải lại trang; lần nhập tiếp theo thay bản hoàn tác bằng dữ liệu ngay trước lần nhập mới.
 
-Xem [docs/KIEM_THU.md](docs/KIEM_THU.md) để biết kết quả thực tế và phần chưa xác minh. Công cụ kiểm thử phát triển là Chromium qua Playwright, không phải phụ thuộc của website. Cần chạy Chrome, Edge và Firefox riêng trên máy của nhóm trước khi nộp.
+Dữ liệu lưu trong trình duyệt, theo từng **origin (giao thức + tên miền + cổng)**. Đổi HTTP/HTTPS, miền hoặc cổng sẽ dùng vùng lưu trữ khác. Các đường dẫn trên cùng origin dùng chung khóa app; đặt hai bản ở hai đường dẫn cùng miền không tạo hai bộ dữ liệu độc lập. Hãy xuất file trước khi chuyển địa chỉ, trình duyệt hoặc thiết bị, và trước khi xóa dữ liệu trình duyệt.
 
-Các tệp hỗ trợ nộp bài:
+Khóa chính: `cham-cong-ca-nhan:v1`; bản trước nhập: `cham-cong-ca-nhan:before-import:v1`. Nếu dữ liệu chính hỏng, phiên bản lạ hoặc vượt giới hạn, app giữ nguyên văn ở khóa `cham-cong-ca-nhan:corrupt:<thời-gian>-<số>`, xác minh xong mới khởi tạo mới; không ghi đè bản sao cũ. Tên khóa hiện trong thông báo và có thể xem ở DevTools → Application/Storage → Local Storage.
 
-- `docs/BAO_CAO.pptx`: báo cáo 10 slide, có ảnh chụp giao diện thực tế.
-- `docs/BAO_CAO.md`: dàn ý, kịch bản demo và câu hỏi bảo vệ.
-- `docs/PHAN_CONG.xlsx`: mẫu phân công/đánh giá; họ tên, điểm và tỷ lệ đóng góp để trống cho nhóm điền.
-- `docs/PHAN_CONG.csv`: dữ liệu phân công ban đầu để tham khảo.
-- `docs/THAY_DOI.md`: thay đổi, hạn chế, bảng đối chiếu yêu cầu giảng viên.
+Nếu localStorage bị chặn/đầy hoặc chưa sao lưu an toàn được bản gốc, app vẫn chạy trong bộ nhớ và báo “Dữ liệu sẽ mất khi đóng trang, hãy xuất file sao lưu”. Xuất/nhập và hoàn tác vẫn dùng được trong phiên; phải xuất trước khi tải lại/đóng trang. Dữ liệu bình thường chỉ được ghi khi bấm nút hoặc rời ô; ngoại lệ là quá trình sao lưu/khởi tạo dữ liệu hỏng lúc mở app.
 
-Điền thông tin nhóm, tên thành viên và đánh giá thực tế; đối chiếu bảng phân công mẫu của giảng viên nếu có. Nén toàn bộ dự án kèm báo cáo và bảng phân công theo tên **NhomX_TenWeb.zip** sau khi thay X bằng số nhóm thật.
+## Triển khai
+
+- **Netlify:** kết nối kho mã; build command `npm run build`; publish directory `dist`. Dùng HTTPS do Netlify cấp.
+- **GitHub Pages:** Settings → Pages → Source: GitHub Actions. Workflow chạy `npm ci`, `npm run build`, tải `dist` bằng `actions/upload-pages-artifact` rồi triển khai bằng `actions/deploy-pages`; cấp quyền `pages: write`, `id-token: write`, môi trường `github-pages`.
+- Vite hiện dùng `base: './'`, hỗ trợ gốc miền và đường dẫn con như `/cham-cong/`. Nếu dùng base tuyệt đối cho kho `ten-kho`, chạy `npm run build -- --base=/ten-kho/` hoặc đặt `base: '/ten-kho/'` trong `vite.config.ts`. Miền riêng ở gốc dùng `/` hoặc giữ `./`.
+- Kiểm tra đường dẫn con bằng `npm run preview -- --base /cham-cong/`. Manifest, icon, start URL và scope đều dùng đường dẫn tương đối.
+
+## Thêm vào màn hình chính
+
+Có manifest “Chấm công lương”, `display: standalone`, icon 192/512, maskable, Apple touch icon và theme-color theo hệ thống. Sau khi triển khai HTTPS, dùng “Thêm vào màn hình chính”/“Cài đặt ứng dụng” của trình duyệt nếu hỗ trợ; Safari iOS dùng menu Chia sẻ. Không có service worker, không cam kết chạy ngoại tuyến.
+
+## Quy ước
+
+- Hàm thuần nhận tháng từ 0 đến 11; khóa ngày vẫn là `YYYY-MM-DD` địa phương, không dùng `toISOString`.
+- Ngày chỉ đi quay cũng là ngày có làm, kể cả phí bằng 0; đi quay không tự thêm buổi Marketing. Km là số đã nhập, không tự nhân đôi.
+- Gợi ý vị trí lấy mọi tháng, so khớp tên sau bỏ khoảng trắng đầu/cuối. Khi km trống, nhớ km đã biết ở ngày mới nhất, rồi lần cuối trong ngày. Không ghi đè km đã có, kể cả 0.
+- File v1 xuất–nhập giữ nguyên cả ngày trống và khoảng trắng vị trí. Khi chấm nghỉ/xóa lần quay làm một ngày không còn dữ liệu, ngày đó được xóa khỏi lưu trữ.
+- Dữ liệu đếm buổi cũ trong localStorage còn được chuyển bằng `normalize`: xếp SEO trước rồi Marketing; ngày hơn 2 buổi không bị cắt bỏ âm thầm. Nhập file qua giao diện bắt buộc phiên bản 1.
